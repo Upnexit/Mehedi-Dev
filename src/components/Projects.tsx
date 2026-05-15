@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { GithubIcon } from "@/components/icons/Brand";
 
 const projects = [
   {
@@ -79,7 +80,7 @@ export default function Projects() {
                       className="size-9 rounded-full glass flex items-center justify-center hover:text-primary transition-colors"
                       aria-label="Source"
                     >
-                      <Github size={15} />
+                      <GithubIcon size={15} />
                     </a>
                     <a
                       href="#"

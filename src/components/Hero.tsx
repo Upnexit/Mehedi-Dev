@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
 import profile from "@/assets/mehedi.jpg";
 
 export default function Hero() {
@@ -68,8 +69,8 @@ export default function Hero() {
             className="mt-10 flex items-center gap-5"
           >
             {[
-              { icon: Github, href: "https://github.com" },
-              { icon: Linkedin, href: "https://linkedin.com" },
+              { icon: GithubIcon, href: "https://github.com" },
+              { icon: LinkedinIcon, href: "https://linkedin.com" },
               { icon: Mail, href: "#contact" },
             ].map(({ icon: Icon, href }, i) => (
               <a
