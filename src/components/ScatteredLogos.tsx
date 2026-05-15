@@ -31,8 +31,10 @@ export default function ScatteredLogos() {
     <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
       {items.map(({ Icon, angle, radius, size, delay }, i) => {
         const rad = (angle * Math.PI) / 180;
-        const x = `calc(50% + ${Math.cos(rad) * radius}% - ${size / 2}px)`;
-        const y = `calc(50% + ${Math.sin(rad) * radius}% - ${size / 2}px)`;
+        const x = `${(50 + Math.cos(rad) * radius).toFixed(3)}%`;
+        const y = `${(50 + Math.sin(rad) * radius).toFixed(3)}%`;
+        const dimension = `${size}px`;
+        const offset = `-${size / 2}px`;
         return (
           <motion.div
             key={i}
@@ -49,7 +51,7 @@ export default function ScatteredLogos() {
               y: { duration: 4 + (i % 3), repeat: Infinity, ease: "easeInOut", delay },
               rotate: { duration: 6 + (i % 3), repeat: Infinity, ease: "easeInOut", delay },
             }}
-            style={{ left: x, top: y, width: size, height: size }}
+            style={{ left: x, top: y, width: dimension, height: dimension, marginLeft: offset, marginTop: offset }}
             className="absolute"
           >
             <div

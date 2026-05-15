@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -33,9 +33,11 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="relative min-h-screen bg-background text-foreground">
-      <Suspense fallback={null}>
-        <Scene3D />
-      </Suspense>
+      <ClientOnly fallback={null}>
+        <Suspense fallback={null}>
+          <Scene3D />
+        </Suspense>
+      </ClientOnly>
       <Navbar />
       <Hero />
       <About />
