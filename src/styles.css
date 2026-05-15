@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -31,9 +32,10 @@
   --color-glow: var(--glow);
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-signature: "Caveat", "Brush Script MT", cursive;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
 
 :root {
   --radius: 0.75rem;
@@ -132,6 +134,11 @@
   }
   .font-mono {
     font-family: var(--font-mono);
+  }
+  .font-signature {
+    font-family: var(--font-signature);
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
   .grid-bg {
     background-image:
