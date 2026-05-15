@@ -4,40 +4,50 @@ import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons/Brand"
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-32 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="relative py-28 md:py-36 px-6 overflow-hidden">
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="size-[40rem] rounded-full bg-gradient-primary opacity-20 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8 }}
         >
-          <p className="font-mono text-sm text-primary mb-4 tracking-widest">
-            ◆ 04 / GET IN TOUCH
-          </p>
-          <h2 className="text-5xl md:text-7xl font-bold leading-tight">
-            Let's build <br />
-            <span className="text-gradient">something great.</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-6">
+            <span className="size-1.5 rounded-full bg-gradient-primary" />
+            04 / GET IN TOUCH
+          </div>
+
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight">
+            Have an idea? <br />
+            <span className="font-signature text-gradient text-5xl sm:text-6xl md:text-8xl">
+              Let&apos;s build it.
+            </span>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto">
-            Have a project in mind, a role to fill, or just want to say hi? My
-            inbox is always open.
+
+          <p className="mt-7 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Whether it&apos;s a new product, a redesign, or a tricky engineering
+            challenge — I&apos;d love to hear about it. My inbox is always open.
           </p>
 
           <motion.a
             href="mailto:hello@mehedi.dev"
             whileHover={{ scale: 1.05 }}
-            className="mt-10 inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-glow"
+            className="mt-10 inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-glow text-sm sm:text-base"
           >
             <Mail size={18} />
             hello@mehedi.dev
           </motion.a>
 
-          <div className="mt-12 flex items-center justify-center gap-4">
+          <div className="mt-12 flex items-center justify-center gap-3 sm:gap-4">
             {[
               { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
               { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
-              { icon: TwitterIcon, href: "https://twitter.com", label: "Twitter" },
+              { icon: TwitterIcon, href: "https://twitter.com", label: "Twitter / X" },
             ].map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
@@ -45,19 +55,19 @@ export default function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="size-12 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-glow transition-all hover:-translate-y-1"
+                className="size-11 sm:size-12 rounded-full glass flex items-center justify-center text-muted-foreground hover:text-primary hover:shadow-glow transition-all hover:-translate-y-1"
               >
-                <Icon size={18} />
+                <Icon size={17} />
               </a>
             ))}
           </div>
         </motion.div>
       </div>
 
-      <footer className="mt-32 pt-8 border-t border-border max-w-7xl mx-auto px-2">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground font-mono">
-          <span>© {new Date().getFullYear()} Mehedi Hasan</span>
-          <span>Designed & built with ♥ in Bangladesh</span>
+      <footer className="relative mt-28 pt-8 border-t border-border max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm text-muted-foreground font-mono">
+          <span>© {new Date().getFullYear()} Mehedi Hasan — All rights reserved.</span>
+          <span>Designed &amp; engineered with care.</span>
         </div>
       </footer>
     </section>
