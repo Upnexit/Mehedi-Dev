@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
 import TechOrbit from "@/components/TechOrbit";
+import ScatteredLogos from "@/components/ScatteredLogos";
+import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
 
 export default function Hero() {
@@ -20,8 +22,11 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="relative mx-auto w-full max-w-[22rem] sm:max-w-[26rem] aspect-square flex items-center justify-center order-1 lg:order-2"
         >
+          {/* Scattered floating tech logos in the background */}
+          <ScatteredLogos />
+
           {/* Soft glow */}
-          <div className="absolute inset-10 rounded-full bg-gradient-primary opacity-25 blur-3xl animate-pulse" />
+          <div className="absolute inset-10 rounded-full bg-gradient-primary opacity-20 blur-3xl animate-pulse" />
 
           {/* Decorative dashed rings */}
           <motion.div
@@ -38,30 +43,20 @@ export default function Hero() {
           {/* Orbiting tech logos — sit just outside the photo */}
           <TechOrbit radiusRatio={0.46} duration={36} />
 
-          {/* Profile photo */}
-          <div className="relative size-44 sm:size-52 md:size-60 rounded-full p-[3px] bg-gradient-primary shadow-elegant">
+          {/* Profile photo — kept crisp, no color filters */}
+          <div className="relative size-44 sm:size-52 md:size-60 rounded-full p-[3px] bg-gradient-primary shadow-elegant z-10">
             <div className="size-full rounded-full overflow-hidden bg-card ring-4 ring-background">
               <img
                 src={profile}
                 alt="Mehedi Hasan — Full Stack Developer"
                 className="w-full h-full object-cover"
                 loading="eager"
+                decoding="async"
+                style={{ imageRendering: "auto" }}
+                draggable={false}
               />
             </div>
           </div>
-
-          {/* Status chip */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="absolute -bottom-2 sm:bottom-2 left-1/2 -translate-x-1/2 glass rounded-full px-4 py-2 font-mono text-[10px] sm:text-xs whitespace-nowrap z-10"
-          >
-            <span className="inline-flex items-center gap-2">
-              <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-muted-foreground">currently</span>
-              <span className="text-primary">building.</span>
-            </span>
-          </motion.div>
         </motion.div>
 
         {/* TEXT */}
@@ -81,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             className="font-signature text-gradient leading-[0.9] whitespace-nowrap"
-            style={{ fontSize: "clamp(3.25rem, 11vw, 9rem)" }}
+            style={{ fontSize: "clamp(3rem, 11vw, 9rem)" }}
           >
             Mehedi Hasan
           </motion.h1>
@@ -102,10 +97,20 @@ export default function Hero() {
             Full-Stack Web Developer
           </motion.h2>
 
-          <motion.p
+          {/* Rotating "what I'm doing" line for a real, alive feel */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.75 }}
+            className="flex justify-center lg:justify-start"
+          >
+            <RoleRotator />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.85 }}
             className="mt-5 text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed"
           >
             I design, engineer and ship production-grade web products —
@@ -116,7 +121,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85 }}
+            transition={{ delay: 0.95 }}
             className="mt-9 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4"
           >
             <a
@@ -136,7 +141,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
+            transition={{ delay: 1.05 }}
             className="mt-9 flex items-center justify-center lg:justify-start gap-3 sm:gap-4"
           >
             {[
