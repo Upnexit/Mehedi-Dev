@@ -83,7 +83,7 @@ export default function TechOrbit({
                 transition={{
                   y: { duration: 2.4 + (i % 4) * 0.4, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="size-11 sm:size-12 md:size-14 rounded-2xl glass flex items-center justify-center shadow-glow pointer-events-auto"
+                className="size-11 sm:size-12 md:size-14 rounded-2xl flex items-center justify-center pointer-events-auto bg-background/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-primary/20"
                 title={label}
               >
                 <Icon size={22} />
