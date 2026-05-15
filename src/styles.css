@@ -134,6 +134,11 @@
   .font-mono {
     font-family: var(--font-mono);
   }
+  .font-signature {
+    font-family: var(--font-signature);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
   .grid-bg {
     background-image:
       linear-gradient(oklch(0.78 0.18 200 / 6%) 1px, transparent 1px),
