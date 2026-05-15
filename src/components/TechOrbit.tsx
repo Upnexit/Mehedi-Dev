@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
   VSCodeLogo,
@@ -12,8 +13,8 @@ import {
 
 const logos = [
   { Icon: VSCodeLogo, label: "VS Code" },
-  { Icon: FigmaLogo, label: "Figma" },
   { Icon: ReactLogo, label: "React" },
+  { Icon: FigmaLogo, label: "Figma" },
   { Icon: TypeScriptLogo, label: "TypeScript" },
   { Icon: NodeLogo, label: "Node.js" },
   { Icon: TailwindLogo, label: "Tailwind CSS" },
@@ -22,63 +23,74 @@ const logos = [
 ];
 
 type Props = {
-  /** Orbit ring radius in px */
-  radius?: number;
-  /** Seconds for one full revolution */
+  /** Orbit radius as a fraction of the parent's smaller dimension (0–0.5). */
+  radiusRatio?: number;
+  /** Seconds for one full revolution. */
   duration?: number;
-  /** Reverse direction */
+  /** Reverse direction. */
   reverse?: boolean;
-  /** Subset of logos (indices) */
-  pick?: number[];
 };
 
 /**
- * Orbiting tech-logo ring rendered behind the profile photo.
- * Counter-rotates the inner chip so each logo stays upright.
+ * Orbits 8 tech logos around the parent's center, just outside the profile.
+ * Uses ResizeObserver so the radius scales correctly on mobile and desktop.
  */
 export default function TechOrbit({
-  radius = 180,
-  duration = 26,
+  radiusRatio = 0.46,
+  duration = 32,
   reverse = false,
-  pick,
 }: Props) {
-  const items = pick ? pick.map((i) => logos[i]) : logos;
+  const ref = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState(0);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const ro = new ResizeObserver(([entry]) => {
+      const { width, height } = entry.contentRect;
+      setSize(Math.min(width, height));
+    });
+    ro.observe(ref.current);
+    return () => ro.disconnect();
+  }, []);
+
+  const radius = size * radiusRatio;
   const dir = reverse ? -360 : 360;
 
   return (
     <motion.div
+      ref={ref}
       className="absolute inset-0 pointer-events-none"
       animate={{ rotate: dir }}
       transition={{ duration, repeat: Infinity, ease: "linear" }}
       aria-hidden="true"
     >
-      {items.map(({ Icon, label }, i) => {
-        const angle = (i / items.length) * Math.PI * 2;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-        return (
-          <motion.div
-            key={label}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            style={{ x, y }}
-            // Counter-rotate so logos stay upright
-            animate={{ rotate: -dir }}
-            transition={{ duration, repeat: Infinity, ease: "linear" }}
-          >
+      {size > 0 &&
+        logos.map(({ Icon, label }, i) => {
+          const angle = (i / logos.length) * Math.PI * 2 - Math.PI / 2;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
+          return (
             <motion.div
-              whileHover={{ scale: 1.25 }}
-              animate={{ y: [0, -6, 0] }}
-              transition={{
-                y: { duration: 2.4 + (i % 4) * 0.4, repeat: Infinity, ease: "easeInOut" },
-              }}
-              className="size-12 sm:size-14 rounded-2xl glass flex items-center justify-center shadow-glow pointer-events-auto"
-              title={label}
+              key={label}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              style={{ x, y }}
+              animate={{ rotate: -dir }}
+              transition={{ duration, repeat: Infinity, ease: "linear" }}
             >
-              <Icon size={26} />
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  y: { duration: 2.4 + (i % 4) * 0.4, repeat: Infinity, ease: "easeInOut" },
+                }}
+                className="size-11 sm:size-12 md:size-14 rounded-2xl glass flex items-center justify-center shadow-glow pointer-events-auto"
+                title={label}
+              >
+                <Icon size={22} />
+              </motion.div>
             </motion.div>
-          </motion.div>
-        );
-      })}
+          );
+        })}
     </motion.div>
   );
 }
