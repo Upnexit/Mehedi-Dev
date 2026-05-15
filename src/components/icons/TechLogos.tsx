@@ -91,3 +91,90 @@ export function GitHubLogo({ size = 28 }: IconProps) {
     </svg>
   );
 }
+
+export function PythonLogo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true">
+      <path fill="#3776ab" d="M31.9 2c-7 0-6.6 3-6.6 3v3.2h6.7v.9H22.2s-4.5-.5-4.5 6.5 3.9 6.7 3.9 6.7H25v-3.4s-.2-3.9 3.8-3.9h6.6s3.7.1 3.7-3.6V5.7S39.6 2 31.9 2zm-3.7 2.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/>
+      <path fill="#ffd43b" d="M32.1 62c7 0 6.6-3 6.6-3v-3.2H32v-.9h9.8s4.5.5 4.5-6.5-3.9-6.7-3.9-6.7H39v3.4s.2 3.9-3.8 3.9h-6.6s-3.7-.1-3.7 3.6v6.7s-.6 3.7 7.2 3.7zm3.7-2.1a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4z"/>
+    </svg>
+  );
+}
+
+export function JavaScriptLogo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 256 256" aria-hidden="true">
+      <rect width="256" height="256" fill="#f7df1e" rx="24"/>
+      <path fill="#000" d="M67 213c5 10 14 18 31 18 19 0 32-10 32-32v-69h-21v68c0 10-4 13-11 13-7 0-10-5-13-11zm68-2c6 12 19 21 39 21 21 0 36-11 36-30 0-18-10-26-29-34l-5-2c-9-4-13-7-13-13 0-5 4-9 10-9 7 0 10 3 13 9l16-10c-7-12-16-16-29-16-18 0-30 12-30 27 0 18 10 26 27 33l5 2c10 5 16 7 16 14 0 6-5 10-13 10-9 0-15-5-19-12z"/>
+    </svg>
+  );
+}
+
+export function HTML5Logo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 128 128" aria-hidden="true">
+      <path fill="#e44d26" d="M19.04 0l8.2 91.94L63.95 102l36.81-10.07L108.96 0z"/>
+      <path fill="#f16529" d="M64 94.21l29.74-8.24 6.36-71.27H64z"/>
+      <path fill="#fff" d="M64 38.78H49.13l-1.03-11.5H64v-11.2H35.84l.27 3 2.76 30.94H64zm0 29.07-12.55-3.39-.8-9H39.4l1.58 17.69L64 79.65z"/>
+      <path fill="#ebebeb" d="M64 38.78v11.24h13.83l-1.31 14.61L64 68.07v11.58l22.66-6.27.17-1.87 2.6-29.06.27-2.96.81-9.71H64zm0-22.7v11.2h27.13l.23-2.52.51-5.68.27-3z"/>
+    </svg>
+  );
+}
+
+export function CSS3Logo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 128 128" aria-hidden="true">
+      <path fill="#1572b6" d="M19.67 0h88.66l-8.07 91.78L63.91 102l-36.21-10.21z"/>
+      <path fill="#33a9dc" d="M64 94.32l29.32-8.12 6.9-77.32H64z"/>
+      <path fill="#fff" d="M64 47.83H49.32L48.31 36.7H64V25.83H36.4l.26 2.94 2.7 30.27H64zm0 28.27-12.51-3.38-.8-8.96H39.6l1.57 17.66L64 87.84z"/>
+      <path fill="#ebebeb" d="M64 47.83V58.7h13.62l-1.28 14.34L64 76.43v11.32l22.65-6.28.17-1.87 2.6-29.1.27-2.95H64zm0-21.92v10.79h26.69l.22-2.49.51-5.36.27-2.94H64z"/>
+    </svg>
+  );
+}
+
+export function GraphQLLogo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 256 256" aria-hidden="true">
+      <g fill="none" stroke="#e535ab" strokeWidth="8">
+        <path d="M128 16l108 62v100l-108 62L20 178V78z"/>
+        <path d="M128 16v224M20 78l216 124M20 178l216-124"/>
+      </g>
+      <g fill="#e535ab">
+        <circle cx="128" cy="16" r="14"/>
+        <circle cx="236" cy="78" r="14"/>
+        <circle cx="236" cy="178" r="14"/>
+        <circle cx="128" cy="240" r="14"/>
+        <circle cx="20" cy="178" r="14"/>
+        <circle cx="20" cy="78" r="14"/>
+      </g>
+    </svg>
+  );
+}
+
+export function DockerLogo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden="true">
+      <path fill="#2496ed" d="M62 26.7s-2.6-2.4-8 .4c.6-4.6-4.6-7-4.6-7s-2.4 2.7-2 6.6c.2 2 1 2.8 1 2.8H4s-1.4 9 5.6 14.5c4.6 3.6 11 4.7 17 4.7C40.6 48.7 51 42.4 56 33c1.7.1 5.4.1 7-3.5 0 0-.4-1-1-2.8zM33 27h6v6h-6zm-8 0h6v6h-6zm-8 0h6v6h-6zm-8 0h6v6H9zm8-8h6v6h-6zm8 0h6v6h-6zm8 0h6v6h-6zm0-8h6v6h-6z"/>
+    </svg>
+  );
+}
+
+export function ViteLogo({ size = 28 }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 410 404" aria-hidden="true">
+      <defs>
+        <linearGradient id="vg1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#41d1ff"/>
+          <stop offset="1" stopColor="#bd34fe"/>
+        </linearGradient>
+        <linearGradient id="vg2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#ffea83"/>
+          <stop offset="0.5" stopColor="#ffdd35"/>
+          <stop offset="1" stopColor="#ffa800"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#vg1)" d="M399 60 215 391c-4 7-13 7-17 0L6 60c-4-7 2-15 10-14l190 34c1 0 3 0 4 0l185-34c8-1 14 7 10 14z"/>
+      <path fill="url(#vg2)" d="M292 7 154 35c-2 0-4 2-4 5l-9 145c0 3 3 6 6 5l38-9c4-1 8 2 7 6l-12 56c-1 4 4 7 8 4l86-104c2-3 0-7-4-7l-39 8c-3 1-6-3-5-6l25-87c1-3-2-7-5-6z"/>
+    </svg>
+  );
+}
