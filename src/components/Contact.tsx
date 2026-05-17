@@ -4,7 +4,7 @@ import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons/Brand"
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 md:py-36 px-6 overflow-hidden">
+    <section id="contact" className="relative pt-28 md:pt-36 pb-6 px-6 overflow-hidden">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="size-[40rem] rounded-full bg-gradient-primary opacity-20 blur-3xl" />
