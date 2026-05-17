@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
-import TechOrbit, { type LogoItem } from "@/components/TechOrbit";
+import TechOrbit from "@/components/TechOrbit";
 import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
 import {
