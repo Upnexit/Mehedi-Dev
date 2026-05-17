@@ -59,10 +59,9 @@ export default function About() {
       eyebrow="০১ / আমার সম্পর্কে"
       title={
         <span className="font-bangla-display">
-          এমন একজন ডেভেলপার, <br className="hidden md:block" />
-          যে কাজকে{" "}
-          <span className="text-gradient">নিজের</span>{" "}
-          <span className="font-signature text-gradient">মতো</span> ভাবে।
+          হ্যালো, আমি <span className="text-gradient">মেহেদী</span> — <br className="hidden md:block" />
+          কোডের ভেতরে গল্প{" "}
+          <span className="font-signature text-gradient">খুঁজে</span> বেড়াই।
         </span>
       }
     >
@@ -231,7 +230,7 @@ export default function About() {
         <div className="absolute -top-24 -right-24 size-72 rounded-full bg-gradient-primary opacity-20 blur-3xl" />
         <div className="relative">
           <h3 className="text-2xl md:text-4xl font-bold font-bangla-display leading-tight">
-            “কোড লেখা সহজ — <span className="text-gradient">যত্ন নিয়ে</span> লেখাটাই আসল কাজ।”
+            “ছোট ছোট <span className="text-gradient">ডিটেইল</span> থেকেই জন্ম নেয় বড় অভিজ্ঞতা।”
           </h3>
           <p className="mt-4 text-muted-foreground font-bangla text-base md:text-lg leading-[1.9] max-w-3xl">
             আমি বিশ্বাস করি, একটি ভালো প্রোডাক্ট শুধু সুন্দর দেখতেই হয় না — সেটা

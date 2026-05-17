@@ -64,10 +64,10 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <footer className="relative mt-28 pt-8 border-t border-border max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm text-muted-foreground font-mono">
-          <span>© {new Date().getFullYear()} Mehedi Hasan — All rights reserved.</span>
-          <span>Designed &amp; engineered with care.</span>
+      <footer className="relative mt-16 pt-4 border-t border-border/60 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center gap-3 text-[11px] sm:text-xs text-muted-foreground/80 font-mono">
+          <span>© {new Date().getFullYear()} Mehedi Hasan</span>
+          <span>Crafted with care.</span>
         </div>
       </footer>
     </section>
