@@ -2,9 +2,46 @@ import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
 import TechOrbit from "@/components/TechOrbit";
-import ScatteredLogos from "@/components/ScatteredLogos";
 import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
+import {
+  VSCodeLogo,
+  FigmaLogo,
+  ReactLogo,
+  TypeScriptLogo,
+  NodeLogo,
+  TailwindLogo,
+  NextLogo,
+  GitHubLogo,
+  PythonLogo,
+  JavaScriptLogo,
+  HTML5Logo,
+  CSS3Logo,
+  GraphQLLogo,
+  DockerLogo,
+  ViteLogo,
+} from "@/components/icons/TechLogos";
+
+const innerOrbitLogos = [
+  { Icon: VSCodeLogo, label: "VS Code" },
+  { Icon: ReactLogo, label: "React" },
+  { Icon: FigmaLogo, label: "Figma" },
+  { Icon: TypeScriptLogo, label: "TypeScript" },
+  { Icon: NodeLogo, label: "Node.js" },
+  { Icon: TailwindLogo, label: "Tailwind CSS" },
+  { Icon: NextLogo, label: "Next.js" },
+  { Icon: GitHubLogo, label: "GitHub" },
+];
+
+const outerOrbitLogos = [
+  { Icon: PythonLogo, label: "Python" },
+  { Icon: JavaScriptLogo, label: "JavaScript" },
+  { Icon: HTML5Logo, label: "HTML5" },
+  { Icon: CSS3Logo, label: "CSS3" },
+  { Icon: GraphQLLogo, label: "GraphQL" },
+  { Icon: DockerLogo, label: "Docker" },
+  { Icon: ViteLogo, label: "Vite" },
+];
 
 export default function Hero() {
   return (
