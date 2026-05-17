@@ -56,13 +56,12 @@ export default function About() {
   return (
     <SectionShell
       id="about"
-      eyebrow="০১ / আমার সম্পর্কে"
+      eyebrow="01 / ABOUT ME"
       title={
-        <span className="font-bangla-display">
-          হ্যালো, আমি <span className="text-gradient">মেহেদী</span> — <br className="hidden md:block" />
-          কোডের ভেতরে গল্প{" "}
-          <span className="font-signature text-gradient">খুঁজে</span> বেড়াই।
-        </span>
+        <>
+          Hello, I'm <span className="text-gradient">Mehedi</span> — <br className="hidden md:block" />
+          I look for <span className="font-signature text-gradient">stories</span> inside code.
+        </>
       }
     >
       {/* INTRO + STATS */}

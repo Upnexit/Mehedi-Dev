@@ -1,14 +1,20 @@
 import { motion } from "framer-motion";
 import {
   ArrowUpRight,
-  Building2,
   Rocket,
   Users,
   Sparkles,
   Globe,
   ShieldCheck,
+  MapPin,
+  Code2,
+  Cloud,
+  Smartphone,
+  LayoutGrid,
+  Cpu,
 } from "lucide-react";
 import SectionShell from "./SectionShell";
+import upnexitLogo from "@/assets/upnexit-logo.png";
 
 const stats = [
   { value: "2024", label: "Founded", Icon: Rocket },
@@ -19,20 +25,34 @@ const stats = [
 
 const services = [
   {
-    title: "Web & SaaS Development",
-    text: "Production-grade web apps, dashboards, and SaaS platforms built with modern stacks.",
+    Icon: Code2,
+    title: "Custom Software Development",
+    text: "Tailor-made web platforms, ERPs and internal tools engineered around your exact business workflow — no off-the-shelf compromises.",
   },
   {
-    title: "Brand & Product Design",
-    text: "Identity systems, UI/UX and design systems crafted to feel premium and stay consistent.",
+    Icon: LayoutGrid,
+    title: "SaaS & Dashboard Products",
+    text: "End-to-end SaaS products with multi-tenant architecture, billing, analytics and admin panels ready for real users from day one.",
   },
   {
-    title: "Cloud & DevOps",
-    text: "Scalable infrastructure, CI/CD, and performance tuning for fast, reliable products.",
+    Icon: Smartphone,
+    title: "Mobile & Cross-Platform Apps",
+    text: "Performant Android, iOS and PWA experiences that share one codebase and a consistent, premium feel.",
   },
   {
-    title: "AI Integrations",
-    text: "Pragmatic AI features — assistants, automations and data tooling — wired into real workflows.",
+    Icon: Cloud,
+    title: "Cloud, DevOps & Hosting",
+    text: "Scalable cloud infrastructure, CI/CD pipelines and managed hosting — secure, observable and built to grow with you.",
+  },
+  {
+    Icon: Cpu,
+    title: "AI & Automation",
+    text: "Practical AI integrations, chat assistants and workflow automations that remove repetitive work and unlock new revenue.",
+  },
+  {
+    Icon: Globe,
+    title: "Branding & UI/UX Design",
+    text: "Identity systems, design systems and pixel-perfect interfaces that make your product feel trustworthy and modern.",
   },
 ];
 
@@ -43,8 +63,8 @@ export default function Company() {
       eyebrow="04 / FOUNDER & COMPANY"
       title={
         <>
-          Building <span className="text-gradient">Upnex&nbsp;IT</span> — <br className="hidden sm:block" />
-          a studio for ambitious digital products.
+          Founder of <span className="text-gradient">Upnex&nbsp;IT</span> — <br className="hidden sm:block" />
+          a custom software studio from Naogaon, Bangladesh.
         </>
       }
     >
@@ -55,36 +75,61 @@ export default function Company() {
         transition={{ duration: 0.7 }}
         className="relative glass rounded-3xl p-7 md:p-12 overflow-hidden"
       >
-        {/* Ambient glows */}
-        <div className="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-gradient-to-br from-cyan-400/30 via-sky-500/20 to-violet-500/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-24 size-80 rounded-full bg-gradient-to-tr from-violet-500/30 via-fuchsia-500/20 to-pink-400/20 blur-3xl" />
+        {/* Ambient brand-tinted glows (orange + green from logo) */}
+        <div className="pointer-events-none absolute -top-32 -right-24 size-80 rounded-full bg-[radial-gradient(circle,_rgba(255,120,40,0.35),_transparent_70%)] blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-24 size-80 rounded-full bg-[radial-gradient(circle,_rgba(20,120,70,0.35),_transparent_70%)] blur-3xl" />
 
         <div className="relative grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-14">
-          {/* Left — story */}
+          {/* Left — story + logo */}
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-5">
-              <Building2 size={12} />
-              FOUNDER · UPNEX IT
+            {/* Logo card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-4 rounded-2xl bg-white/95 backdrop-blur px-5 py-3 mb-6 shadow-elegant border border-white/20"
+            >
+              <img
+                src={upnexitLogo}
+                alt="Upnex IT — Custom Software Solution"
+                className="h-12 md:h-14 w-auto object-contain"
+                loading="lazy"
+              />
+            </motion.div>
+
+            <div className="flex flex-wrap items-center gap-2 mb-5">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest">
+                <span className="size-1.5 rounded-full bg-gradient-primary" />
+                FOUNDER · CEO
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-muted-foreground tracking-widest">
+                <MapPin size={11} />
+                NAOGAON, BANGLADESH
+              </span>
             </div>
 
             <h3 className="text-2xl md:text-4xl font-semibold leading-tight mb-5">
               I founded{" "}
-              <span className="text-gradient">Upnex&nbsp;IT</span> to ship
-              software that actually feels human.
+              <span className="text-gradient">Upnex&nbsp;IT</span> to deliver
+              <span className="italic"> custom software solutions</span> that
+              actually move businesses forward.
             </h3>
 
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-5">
-              Upnex IT is a small but obsessive product studio I started to help
-              founders, agencies and growing teams launch web platforms,
-              dashboards and SaaS products without the usual chaos. We pair
-              clean engineering with thoughtful design — and stay accountable
-              from the first call to long after launch.
+              <span className="text-foreground font-semibold">Upnex IT</span>{" "}
+              is a Naogaon-based custom software company building web platforms,
+              SaaS products, mobile apps and internal tools for founders,
+              agencies and growing enterprises. Every line of code we ship is
+              written with one goal — to solve a real business problem,
+              elegantly.
             </p>
 
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-7">
-              From early-stage MVPs to scale-ready systems, every project we
-              touch is built around three things: performance, polish, and a
-              long-term partnership with the client.
+              As founder, I lead product strategy, engineering and design
+              direction. Our small but obsessive team pairs clean architecture
+              with thoughtful UX — so the software we deliver is fast,
+              scalable, secure, and a pleasure to use.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -95,14 +140,14 @@ export default function Company() {
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-primary text-primary-foreground font-medium text-sm shadow-glow hover:scale-[1.02] transition-transform"
               >
                 <Globe size={16} />
-                Visit Upnex IT
+                Explore Upnex IT
                 <ArrowUpRight size={16} />
               </a>
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-full glass text-sm font-medium hover:shadow-glow transition-all"
               >
-                Work with the studio
+                Hire the studio
               </a>
             </div>
           </div>
@@ -129,26 +174,43 @@ export default function Company() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </div>
 
-            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
-              {services.map((srv, i) => (
-                <motion.div
-                  key={srv.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 + i * 0.06 }}
-                  className="glass rounded-2xl p-4 sm:p-5"
-                >
-                  <div className="text-sm font-semibold mb-1.5">
-                    {srv.title}
-                  </div>
-                  <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed">
-                    {srv.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+        {/* Services grid */}
+        <div className="relative mt-10 md:mt-14">
+          <div className="flex items-end justify-between mb-5">
+            <h4 className="text-lg md:text-xl font-semibold">
+              What we build at{" "}
+              <span className="text-gradient">Upnex IT</span>
+            </h4>
+            <span className="hidden sm:inline font-mono text-[10px] text-muted-foreground tracking-widest">
+              SERVICES
+            </span>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {services.map((srv, i) => (
+              <motion.div
+                key={srv.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.05 + i * 0.05 }}
+                whileHover={{ y: -4 }}
+                className="glass rounded-2xl p-5 group"
+              >
+                <div className="size-10 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center shadow-glow mb-3">
+                  <srv.Icon size={18} />
+                </div>
+                <div className="text-sm md:text-base font-semibold mb-1.5">
+                  {srv.title}
+                </div>
+                <p className="text-xs sm:text-[13px] text-muted-foreground leading-relaxed">
+                  {srv.text}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>
