@@ -22,27 +22,27 @@ import {
   ViteLogo,
 } from "@/components/icons/TechLogos";
 
-// Inner ring — main techs orbit close to the photo
+// Inner ring — supporting languages orbit close to the photo
 const innerLogos = [
-  { Icon: VSCodeLogo, label: "VS Code" },
-  { Icon: ReactLogo, label: "React" },
-  { Icon: FigmaLogo, label: "Figma" },
-  { Icon: TypeScriptLogo, label: "TypeScript" },
-  { Icon: NodeLogo, label: "Node.js" },
-  { Icon: TailwindLogo, label: "Tailwind CSS" },
-  { Icon: NextLogo, label: "Next.js" },
-  { Icon: GitHubLogo, label: "GitHub" },
-];
-
-// Outer ring — supporting techs orbit a bit further out, in reverse
-const outerLogos = [
-  { Icon: PythonLogo, label: "Python" },
   { Icon: JavaScriptLogo, label: "JavaScript" },
   { Icon: HTML5Logo, label: "HTML5" },
+  { Icon: PythonLogo, label: "Python" },
   { Icon: CSS3Logo, label: "CSS3" },
+  { Icon: TypeScriptLogo, label: "TypeScript" },
   { Icon: GraphQLLogo, label: "GraphQL" },
   { Icon: DockerLogo, label: "Docker" },
   { Icon: ViteLogo, label: "Vite" },
+];
+
+// Outer ring — main tools/platforms, in reverse direction
+const outerLogos = [
+  { Icon: GitHubLogo, label: "GitHub" },
+  { Icon: NextLogo, label: "Next.js" },
+  { Icon: FigmaLogo, label: "Figma" },
+  { Icon: ReactLogo, label: "React" },
+  { Icon: NodeLogo, label: "Node.js" },
+  { Icon: TailwindLogo, label: "Tailwind CSS" },
+  { Icon: VSCodeLogo, label: "VS Code" },
 ];
 
 export default function Hero() {
