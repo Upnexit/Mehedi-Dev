@@ -137,6 +137,16 @@
   .font-mono {
     font-family: var(--font-mono);
   }
+  .font-bangla {
+    font-family: var(--font-bangla);
+    font-feature-settings: normal;
+    letter-spacing: 0;
+  }
+  .font-bangla-display {
+    font-family: var(--font-bangla-display);
+    font-feature-settings: normal;
+    letter-spacing: -0.005em;
+  }
   .font-signature {
     font-family: var(--font-signature);
     font-weight: 700;
