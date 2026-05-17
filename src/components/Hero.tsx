@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
-import TechOrbit from "@/components/TechOrbit";
+import TechOrbit, { type LogoItem } from "@/components/TechOrbit";
 import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
 import {
@@ -22,25 +22,48 @@ import {
   ViteLogo,
 } from "@/components/icons/TechLogos";
 
-const innerOrbitLogos = [
-  { Icon: VSCodeLogo, label: "VS Code" },
-  { Icon: ReactLogo, label: "React" },
-  { Icon: FigmaLogo, label: "Figma" },
-  { Icon: TypeScriptLogo, label: "TypeScript" },
-  { Icon: NodeLogo, label: "Node.js" },
-  { Icon: TailwindLogo, label: "Tailwind CSS" },
-  { Icon: NextLogo, label: "Next.js" },
-  { Icon: GitHubLogo, label: "GitHub" },
-];
-
-const outerOrbitLogos = [
-  { Icon: PythonLogo, label: "Python" },
-  { Icon: JavaScriptLogo, label: "JavaScript" },
-  { Icon: HTML5Logo, label: "HTML5" },
-  { Icon: CSS3Logo, label: "CSS3" },
-  { Icon: GraphQLLogo, label: "GraphQL" },
-  { Icon: DockerLogo, label: "Docker" },
-  { Icon: ViteLogo, label: "Vite" },
+// Each main tech has its own satellite — a smaller logo that orbits it
+const orbitLogos: LogoItem[] = [
+  {
+    Icon: VSCodeLogo,
+    label: "VS Code",
+    satellite: { Icon: ViteLogo, label: "Vite", duration: 5 },
+  },
+  {
+    Icon: ReactLogo,
+    label: "React",
+    satellite: { Icon: JavaScriptLogo, label: "JavaScript", duration: 6 },
+  },
+  {
+    Icon: FigmaLogo,
+    label: "Figma",
+    satellite: { Icon: HTML5Logo, label: "HTML5", duration: 5.5, reverse: true },
+  },
+  {
+    Icon: TypeScriptLogo,
+    label: "TypeScript",
+    satellite: { Icon: CSS3Logo, label: "CSS3", duration: 6.5 },
+  },
+  {
+    Icon: NodeLogo,
+    label: "Node.js",
+    satellite: { Icon: DockerLogo, label: "Docker", duration: 7, reverse: true },
+  },
+  {
+    Icon: TailwindLogo,
+    label: "Tailwind CSS",
+    satellite: { Icon: GraphQLLogo, label: "GraphQL", duration: 6 },
+  },
+  {
+    Icon: NextLogo,
+    label: "Next.js",
+    satellite: { Icon: GitHubLogo, label: "GitHub", duration: 5.5, reverse: true },
+  },
+  {
+    Icon: GitHubLogo,
+    label: "GitHub",
+    satellite: { Icon: PythonLogo, label: "Python", duration: 6.5 },
+  },
 ];
 
 export default function Hero() {
@@ -79,21 +102,12 @@ export default function Hero() {
             className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* INNER orbit — sits just outside the photo */}
+          {/* Orbit — each main logo carries its own satellite */}
           <TechOrbit
-            radiusRatio={0.34}
-            duration={32}
-            logos={innerOrbitLogos}
-            chipSize={48}
-          />
-
-          {/* OUTER orbit — orbits the inner ring, reverse direction */}
-          <TechOrbit
-            radiusRatio={0.5}
-            duration={52}
-            reverse
-            logos={outerOrbitLogos}
-            chipSize={42}
+            radiusRatio={0.42}
+            duration={42}
+            logos={orbitLogos}
+            chipSize={54}
           />
 
           {/* Profile photo — bigger, kept crisp, no color filters */}
