@@ -102,21 +102,12 @@ export default function Hero() {
             className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* INNER orbit — sits just outside the photo */}
+          {/* Orbit — each main logo carries its own satellite */}
           <TechOrbit
-            radiusRatio={0.34}
-            duration={32}
-            logos={innerOrbitLogos}
-            chipSize={48}
-          />
-
-          {/* OUTER orbit — orbits the inner ring, reverse direction */}
-          <TechOrbit
-            radiusRatio={0.5}
-            duration={52}
-            reverse
-            logos={outerOrbitLogos}
-            chipSize={42}
+            radiusRatio={0.42}
+            duration={42}
+            logos={orbitLogos}
+            chipSize={54}
           />
 
           {/* Profile photo — bigger, kept crisp, no color filters */}
