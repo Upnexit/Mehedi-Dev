@@ -2,9 +2,46 @@ import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
 import TechOrbit from "@/components/TechOrbit";
-import ScatteredLogos from "@/components/ScatteredLogos";
 import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
+import {
+  VSCodeLogo,
+  FigmaLogo,
+  ReactLogo,
+  TypeScriptLogo,
+  NodeLogo,
+  TailwindLogo,
+  NextLogo,
+  GitHubLogo,
+  PythonLogo,
+  JavaScriptLogo,
+  HTML5Logo,
+  CSS3Logo,
+  GraphQLLogo,
+  DockerLogo,
+  ViteLogo,
+} from "@/components/icons/TechLogos";
+
+const innerOrbitLogos = [
+  { Icon: VSCodeLogo, label: "VS Code" },
+  { Icon: ReactLogo, label: "React" },
+  { Icon: FigmaLogo, label: "Figma" },
+  { Icon: TypeScriptLogo, label: "TypeScript" },
+  { Icon: NodeLogo, label: "Node.js" },
+  { Icon: TailwindLogo, label: "Tailwind CSS" },
+  { Icon: NextLogo, label: "Next.js" },
+  { Icon: GitHubLogo, label: "GitHub" },
+];
+
+const outerOrbitLogos = [
+  { Icon: PythonLogo, label: "Python" },
+  { Icon: JavaScriptLogo, label: "JavaScript" },
+  { Icon: HTML5Logo, label: "HTML5" },
+  { Icon: CSS3Logo, label: "CSS3" },
+  { Icon: GraphQLLogo, label: "GraphQL" },
+  { Icon: DockerLogo, label: "Docker" },
+  { Icon: ViteLogo, label: "Vite" },
+];
 
 export default function Hero() {
   return (
@@ -17,16 +54,13 @@ export default function Hero() {
       <div className="max-w-7xl w-full grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center relative z-10">
         {/* PHOTO + ORBIT — order-1 on mobile, order-2 on desktop */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-          className="relative mx-auto w-full max-w-[22rem] sm:max-w-[26rem] aspect-square flex items-center justify-center order-1 lg:order-2"
+          initial={{ opacity: 0, y: 120, scale: 0.7 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.25, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[26rem] sm:max-w-[32rem] md:max-w-[36rem] aspect-square flex items-center justify-center order-1 lg:order-2"
         >
-          {/* Scattered floating tech logos in the background */}
-          <ScatteredLogos />
-
           {/* Soft glow */}
-          <div className="absolute inset-10 rounded-full bg-gradient-primary opacity-20 blur-3xl animate-pulse" />
+          <div className="absolute inset-16 rounded-full bg-gradient-primary opacity-20 blur-3xl animate-pulse" />
 
           {/* Decorative dashed rings */}
           <motion.div
@@ -37,14 +71,38 @@ export default function Hero() {
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[18%] rounded-full border border-secondary/25"
+            className="absolute inset-[14%] rounded-full border border-secondary/25"
+          />
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* Orbiting tech logos — sit just outside the photo */}
-          <TechOrbit radiusRatio={0.46} duration={36} />
+          {/* INNER orbit — sits just outside the photo */}
+          <TechOrbit
+            radiusRatio={0.34}
+            duration={32}
+            logos={innerOrbitLogos}
+            chipSize={48}
+          />
 
-          {/* Profile photo — kept crisp, no color filters */}
-          <div className="relative size-44 sm:size-52 md:size-60 rounded-full p-[3px] bg-gradient-primary shadow-elegant z-10">
+          {/* OUTER orbit — orbits the inner ring, reverse direction */}
+          <TechOrbit
+            radiusRatio={0.5}
+            duration={52}
+            reverse
+            logos={outerOrbitLogos}
+            chipSize={42}
+          />
+
+          {/* Profile photo — bigger, kept crisp, no color filters */}
+          <motion.div
+            initial={{ opacity: 0, y: 80, scale: 0.85 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative size-56 sm:size-64 md:size-72 lg:size-80 rounded-full p-[3px] bg-gradient-primary shadow-elegant z-10"
+          >
             <div className="size-full rounded-full overflow-hidden bg-card ring-4 ring-background">
               <img
                 src={profile}
@@ -56,7 +114,7 @@ export default function Hero() {
                 draggable={false}
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* TEXT */}

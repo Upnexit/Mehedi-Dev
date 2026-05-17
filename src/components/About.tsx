@@ -60,7 +60,9 @@ export default function About() {
       title={
         <>
           Hello, I'm <span className="text-gradient">Mehedi</span> — <br className="hidden md:block" />
-          I look for <span className="font-signature text-gradient">stories</span> inside code.
+          <span className="font-signature text-gradient inline-block leading-[0.95]" style={{ fontSize: "1.15em" }}>
+            I look for stories inside code.
+          </span>
         </>
       }
     >
@@ -137,8 +139,8 @@ export default function About() {
             <span className="size-1.5 rounded-full bg-gradient-primary" />
             ০২ / পরিচিতি
           </div>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight font-bangla-display">
-            জানুন <span className="text-gradient">আমার সম্পর্কে</span>
+          <h3 className="font-signature text-gradient leading-[0.9]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
+            My About
           </h3>
           <p className="mt-3 text-muted-foreground font-bangla text-base md:text-lg max-w-2xl leading-[1.9]">
             কাজের বাইরে আমি কে, কোথা থেকে এসেছি — এক নজরে কিছু ব্যক্তিগত তথ্য।
@@ -185,8 +187,8 @@ export default function About() {
             <span className="size-1.5 rounded-full bg-gradient-primary" />
             ০৩ / পড়াশোনা
           </div>
-          <h3 className="text-3xl md:text-5xl font-bold tracking-tight font-bangla-display">
-            আমার <span className="text-gradient">শিক্ষাজীবন</span>
+          <h3 className="font-signature text-gradient leading-[0.9]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
+            My Education
           </h3>
         </motion.div>
 

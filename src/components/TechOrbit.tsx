@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { motion } from "framer-motion";
 import {
   VSCodeLogo,
@@ -11,7 +11,9 @@ import {
   GitHubLogo,
 } from "@/components/icons/TechLogos";
 
-const logos = [
+type LogoItem = { Icon: ComponentType<{ size?: number }>; label: string };
+
+const defaultLogos: LogoItem[] = [
   { Icon: VSCodeLogo, label: "VS Code" },
   { Icon: ReactLogo, label: "React" },
   { Icon: FigmaLogo, label: "Figma" },
@@ -29,16 +31,22 @@ type Props = {
   duration?: number;
   /** Reverse direction. */
   reverse?: boolean;
+  /** Override the orbiting set. */
+  logos?: LogoItem[];
+  /** Chip size in pixels (responsive will scale via clamp). */
+  chipSize?: number;
 };
 
 /**
- * Orbits 8 tech logos around the parent's center, just outside the profile.
+ * Orbits tech logos around the parent's center.
  * Uses ResizeObserver so the radius scales correctly on mobile and desktop.
  */
 export default function TechOrbit({
   radiusRatio = 0.46,
   duration = 32,
   reverse = false,
+  logos = defaultLogos,
+  chipSize = 52,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState(0);
@@ -83,10 +91,11 @@ export default function TechOrbit({
                 transition={{
                   y: { duration: 2.4 + (i % 4) * 0.4, repeat: Infinity, ease: "easeInOut" },
                 }}
-                className="size-11 sm:size-12 md:size-14 rounded-2xl flex items-center justify-center pointer-events-auto bg-background/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-primary/20"
+                style={{ width: chipSize, height: chipSize }}
+                className="rounded-2xl flex items-center justify-center pointer-events-auto bg-background/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-primary/20"
                 title={label}
               >
-                <Icon size={22} />
+                <Icon size={Math.round(chipSize * 0.46)} />
               </motion.div>
             </motion.div>
           );
