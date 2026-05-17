@@ -63,8 +63,8 @@ export default function Company() {
       eyebrow="04 / FOUNDER & COMPANY"
       title={
         <>
-          Founder of <span className="text-gradient">Upnex&nbsp;IT</span> — <br className="hidden sm:block" />
-          a custom software studio from Naogaon, Bangladesh.
+          <span className="text-foreground">Founder of the Company</span>{" "}
+          <span className="text-gradient">Upnex&nbsp;IT</span>
         </>
       }
     >
