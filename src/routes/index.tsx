@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Company from "@/components/Company";
 import Contact from "@/components/Contact";
 
 const Scene3D = lazy(() => import("@/components/Scene3D"));
@@ -43,6 +44,7 @@ function Index() {
       <About />
       <Skills />
       <Projects />
+      <Company />
       <Contact />
     </main>
   );
