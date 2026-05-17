@@ -4,7 +4,7 @@ import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons/Brand"
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-28 md:py-36 px-6 overflow-hidden">
+    <section id="contact" className="relative pt-28 md:pt-36 pb-6 px-6 overflow-hidden">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="size-[40rem] rounded-full bg-gradient-primary opacity-20 blur-3xl" />
@@ -64,10 +64,10 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <footer className="relative mt-16 pt-4 border-t border-border/60 max-w-7xl mx-auto">
+      <footer className="relative mt-14 pt-4 pb-2 border-t border-border/60 max-w-7xl mx-auto">
         <div className="flex justify-between items-center gap-3 text-[11px] sm:text-xs text-muted-foreground/80 font-mono">
           <span>© {new Date().getFullYear()} Mehedi Hasan</span>
-          <span>Crafted with care.</span>
+          <span className="font-signature text-gradient text-base sm:text-lg leading-none">Crafted with care.</span>
         </div>
       </footer>
     </section>

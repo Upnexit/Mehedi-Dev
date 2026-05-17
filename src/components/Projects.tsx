@@ -46,7 +46,11 @@ export default function Projects() {
       title={
         <>
           Recent projects, <br className="hidden sm:block" />
-          shipped with <span className="text-gradient">intent</span>.
+          shipped with{" "}
+          <span className="font-signature text-gradient inline-block leading-[0.95]" style={{ fontSize: "1.15em" }}>
+            intent
+          </span>
+          .
         </>
       }
     >

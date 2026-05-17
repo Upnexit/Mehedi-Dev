@@ -63,8 +63,8 @@ export default function Company() {
       eyebrow="04 / FOUNDER & COMPANY"
       title={
         <>
-          Founder of <span className="text-gradient">Upnex&nbsp;IT</span> — <br className="hidden sm:block" />
-          a custom software studio from Naogaon, Bangladesh.
+          <span className="text-foreground">Founder of the Company</span>{" "}
+          <span className="text-gradient">Upnex&nbsp;IT</span>
         </>
       }
     >
@@ -88,12 +88,12 @@ export default function Company() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-4 rounded-2xl bg-white/95 backdrop-blur px-5 py-3 mb-6 shadow-elegant border border-white/20"
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 mb-6 shadow-elegant border border-white/20"
             >
               <img
                 src={upnexitLogo}
                 alt="Upnex IT — Custom Software Solution"
-                className="h-12 md:h-14 w-auto object-contain"
+                className="h-20 md:h-24 w-auto object-contain"
                 loading="lazy"
               />
             </motion.div>

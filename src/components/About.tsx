@@ -139,8 +139,9 @@ export default function About() {
             <span className="size-1.5 rounded-full bg-gradient-primary" />
             ০২ / পরিচিতি
           </div>
-          <h3 className="font-signature text-gradient leading-[0.9]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
-            My About
+          <h3 className="leading-[0.9] flex flex-wrap items-baseline gap-x-4" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
+            <span className="font-bold tracking-tight text-foreground">My</span>
+            <span className="font-signature text-gradient">About</span>
           </h3>
           <p className="mt-3 text-muted-foreground font-bangla text-base md:text-lg max-w-2xl leading-[1.9]">
             কাজের বাইরে আমি কে, কোথা থেকে এসেছি — এক নজরে কিছু ব্যক্তিগত তথ্য।
@@ -187,8 +188,9 @@ export default function About() {
             <span className="size-1.5 rounded-full bg-gradient-primary" />
             ০৩ / পড়াশোনা
           </div>
-          <h3 className="font-signature text-gradient leading-[0.9]" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
-            My Education
+          <h3 className="leading-[0.9] flex flex-wrap items-baseline gap-x-4" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
+            <span className="font-bold tracking-tight text-foreground">My</span>
+            <span className="font-signature text-gradient">Education</span>
           </h3>
         </motion.div>
 

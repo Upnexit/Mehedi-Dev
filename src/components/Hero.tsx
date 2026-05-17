@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons/Brand";
-import TechOrbit, { type LogoItem } from "@/components/TechOrbit";
+import TechOrbit from "@/components/TechOrbit";
 import RoleRotator from "@/components/RoleRotator";
 import profile from "@/assets/mehedi.jpg";
 import {
@@ -22,81 +22,27 @@ import {
   ViteLogo,
 } from "@/components/icons/TechLogos";
 
-// Each main tech has its own satellite — a smaller logo that orbits it
-// Each main tech carries 3 satellites that orbit it together on a single ring
-const orbitLogos: LogoItem[] = [
-  {
-    Icon: VSCodeLogo,
-    label: "VS Code",
-    satellites: [
-      { Icon: ViteLogo, label: "Vite", duration: 7 },
-      { Icon: PythonLogo, label: "Python", duration: 7 },
-      { Icon: DockerLogo, label: "Docker", duration: 7 },
-    ],
-  },
-  {
-    Icon: ReactLogo,
-    label: "React",
-    satellites: [
-      { Icon: JavaScriptLogo, label: "JavaScript", duration: 8 },
-      { Icon: TypeScriptLogo, label: "TypeScript", duration: 8 },
-      { Icon: GraphQLLogo, label: "GraphQL", duration: 8 },
-    ],
-  },
-  {
-    Icon: FigmaLogo,
-    label: "Figma",
-    satellites: [
-      { Icon: HTML5Logo, label: "HTML5", duration: 7.5, reverse: true },
-      { Icon: CSS3Logo, label: "CSS3", duration: 7.5, reverse: true },
-      { Icon: TailwindLogo, label: "Tailwind", duration: 7.5, reverse: true },
-    ],
-  },
-  {
-    Icon: TypeScriptLogo,
-    label: "TypeScript",
-    satellites: [
-      { Icon: NodeLogo, label: "Node.js", duration: 8 },
-      { Icon: NextLogo, label: "Next.js", duration: 8 },
-      { Icon: ViteLogo, label: "Vite", duration: 8 },
-    ],
-  },
-  {
-    Icon: NodeLogo,
-    label: "Node.js",
-    satellites: [
-      { Icon: DockerLogo, label: "Docker", duration: 7, reverse: true },
-      { Icon: GraphQLLogo, label: "GraphQL", duration: 7, reverse: true },
-      { Icon: JavaScriptLogo, label: "JavaScript", duration: 7, reverse: true },
-    ],
-  },
-  {
-    Icon: TailwindLogo,
-    label: "Tailwind CSS",
-    satellites: [
-      { Icon: HTML5Logo, label: "HTML5", duration: 8 },
-      { Icon: CSS3Logo, label: "CSS3", duration: 8 },
-      { Icon: FigmaLogo, label: "Figma", duration: 8 },
-    ],
-  },
-  {
-    Icon: NextLogo,
-    label: "Next.js",
-    satellites: [
-      { Icon: ReactLogo, label: "React", duration: 7.5, reverse: true },
-      { Icon: TypeScriptLogo, label: "TypeScript", duration: 7.5, reverse: true },
-      { Icon: VSCodeLogo, label: "VS Code", duration: 7.5, reverse: true },
-    ],
-  },
-  {
-    Icon: GitHubLogo,
-    label: "GitHub",
-    satellites: [
-      { Icon: PythonLogo, label: "Python", duration: 8 },
-      { Icon: JavaScriptLogo, label: "JavaScript", duration: 8 },
-      { Icon: DockerLogo, label: "Docker", duration: 8 },
-    ],
-  },
+// Inner ring — main techs orbit close to the photo
+const innerLogos = [
+  { Icon: VSCodeLogo, label: "VS Code" },
+  { Icon: ReactLogo, label: "React" },
+  { Icon: FigmaLogo, label: "Figma" },
+  { Icon: TypeScriptLogo, label: "TypeScript" },
+  { Icon: NodeLogo, label: "Node.js" },
+  { Icon: TailwindLogo, label: "Tailwind CSS" },
+  { Icon: NextLogo, label: "Next.js" },
+  { Icon: GitHubLogo, label: "GitHub" },
+];
+
+// Outer ring — supporting techs orbit a bit further out, in reverse
+const outerLogos = [
+  { Icon: PythonLogo, label: "Python" },
+  { Icon: JavaScriptLogo, label: "JavaScript" },
+  { Icon: HTML5Logo, label: "HTML5" },
+  { Icon: CSS3Logo, label: "CSS3" },
+  { Icon: GraphQLLogo, label: "GraphQL" },
+  { Icon: DockerLogo, label: "Docker" },
+  { Icon: ViteLogo, label: "Vite" },
 ];
 
 export default function Hero() {
@@ -135,12 +81,20 @@ export default function Hero() {
             className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* Orbit — each main logo carries its own satellite */}
+          {/* Inner orbit — main techs close to the photo */}
           <TechOrbit
-            radiusRatio={0.42}
-            duration={42}
-            logos={orbitLogos}
-            chipSize={54}
+            radiusRatio={0.34}
+            duration={32}
+            logos={innerLogos}
+            chipSize={48}
+          />
+          {/* Outer orbit — supporting techs, reverse direction */}
+          <TechOrbit
+            radiusRatio={0.5}
+            duration={52}
+            reverse
+            logos={outerLogos}
+            chipSize={42}
           />
 
           {/* Profile photo — bigger, kept crisp, no color filters */}
