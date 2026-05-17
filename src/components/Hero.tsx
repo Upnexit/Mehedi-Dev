@@ -23,46 +23,79 @@ import {
 } from "@/components/icons/TechLogos";
 
 // Each main tech has its own satellite — a smaller logo that orbits it
+// Each main tech carries 3 satellites that orbit it together on a single ring
 const orbitLogos: LogoItem[] = [
   {
     Icon: VSCodeLogo,
     label: "VS Code",
-    satellite: { Icon: ViteLogo, label: "Vite", duration: 5 },
+    satellites: [
+      { Icon: ViteLogo, label: "Vite", duration: 7 },
+      { Icon: PythonLogo, label: "Python", duration: 7 },
+      { Icon: DockerLogo, label: "Docker", duration: 7 },
+    ],
   },
   {
     Icon: ReactLogo,
     label: "React",
-    satellite: { Icon: JavaScriptLogo, label: "JavaScript", duration: 6 },
+    satellites: [
+      { Icon: JavaScriptLogo, label: "JavaScript", duration: 8 },
+      { Icon: TypeScriptLogo, label: "TypeScript", duration: 8 },
+      { Icon: GraphQLLogo, label: "GraphQL", duration: 8 },
+    ],
   },
   {
     Icon: FigmaLogo,
     label: "Figma",
-    satellite: { Icon: HTML5Logo, label: "HTML5", duration: 5.5, reverse: true },
+    satellites: [
+      { Icon: HTML5Logo, label: "HTML5", duration: 7.5, reverse: true },
+      { Icon: CSS3Logo, label: "CSS3", duration: 7.5, reverse: true },
+      { Icon: TailwindLogo, label: "Tailwind", duration: 7.5, reverse: true },
+    ],
   },
   {
     Icon: TypeScriptLogo,
     label: "TypeScript",
-    satellite: { Icon: CSS3Logo, label: "CSS3", duration: 6.5 },
+    satellites: [
+      { Icon: NodeLogo, label: "Node.js", duration: 8 },
+      { Icon: NextLogo, label: "Next.js", duration: 8 },
+      { Icon: ViteLogo, label: "Vite", duration: 8 },
+    ],
   },
   {
     Icon: NodeLogo,
     label: "Node.js",
-    satellite: { Icon: DockerLogo, label: "Docker", duration: 7, reverse: true },
+    satellites: [
+      { Icon: DockerLogo, label: "Docker", duration: 7, reverse: true },
+      { Icon: GraphQLLogo, label: "GraphQL", duration: 7, reverse: true },
+      { Icon: JavaScriptLogo, label: "JavaScript", duration: 7, reverse: true },
+    ],
   },
   {
     Icon: TailwindLogo,
     label: "Tailwind CSS",
-    satellite: { Icon: GraphQLLogo, label: "GraphQL", duration: 6 },
+    satellites: [
+      { Icon: HTML5Logo, label: "HTML5", duration: 8 },
+      { Icon: CSS3Logo, label: "CSS3", duration: 8 },
+      { Icon: FigmaLogo, label: "Figma", duration: 8 },
+    ],
   },
   {
     Icon: NextLogo,
     label: "Next.js",
-    satellite: { Icon: GitHubLogo, label: "GitHub", duration: 5.5, reverse: true },
+    satellites: [
+      { Icon: ReactLogo, label: "React", duration: 7.5, reverse: true },
+      { Icon: TypeScriptLogo, label: "TypeScript", duration: 7.5, reverse: true },
+      { Icon: VSCodeLogo, label: "VS Code", duration: 7.5, reverse: true },
+    ],
   },
   {
     Icon: GitHubLogo,
     label: "GitHub",
-    satellite: { Icon: PythonLogo, label: "Python", duration: 6.5 },
+    satellites: [
+      { Icon: PythonLogo, label: "Python", duration: 8 },
+      { Icon: JavaScriptLogo, label: "JavaScript", duration: 8 },
+      { Icon: DockerLogo, label: "Docker", duration: 8 },
+    ],
   },
 ];
 
