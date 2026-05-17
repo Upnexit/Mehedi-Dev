@@ -64,10 +64,10 @@ export default function Contact() {
         </motion.div>
       </div>
 
-      <footer className="relative mt-16 pt-4 border-t border-border/60 max-w-7xl mx-auto">
+      <footer className="relative mt-14 pt-4 pb-2 border-t border-border/60 max-w-7xl mx-auto">
         <div className="flex justify-between items-center gap-3 text-[11px] sm:text-xs text-muted-foreground/80 font-mono">
           <span>© {new Date().getFullYear()} Mehedi Hasan</span>
-          <span>Crafted with care.</span>
+          <span className="font-signature text-gradient text-base sm:text-lg leading-none">Crafted with care.</span>
         </div>
       </footer>
     </section>
