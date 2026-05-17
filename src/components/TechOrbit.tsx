@@ -3,20 +3,22 @@ import { motion } from "framer-motion";
 
 type IconType = ComponentType<{ size?: number }>;
 
+export type Satellite = {
+  Icon: IconType;
+  label: string;
+  /** Orbit radius in pixels around the parent chip center. */
+  radius?: number;
+  /** Seconds per revolution. */
+  duration?: number;
+  reverse?: boolean;
+  size?: number;
+};
+
 export type LogoItem = {
   Icon: IconType;
   label: string;
-  /** Optional small satellite orbiting around this logo. */
-  satellite?: {
-    Icon: IconType;
-    label: string;
-    /** Orbit radius in pixels around the parent chip center. */
-    radius?: number;
-    /** Seconds per revolution. */
-    duration?: number;
-    reverse?: boolean;
-    size?: number;
-  };
+  /** One or more small satellites orbiting around this logo. */
+  satellites?: Satellite[];
 };
 
 type Props = {
