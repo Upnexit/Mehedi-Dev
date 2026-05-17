@@ -31,7 +31,10 @@ export default function Skills() {
       title={
         <>
           Tools I reach for, <br className="hidden sm:block" />
-          <span className="text-gradient">every day</span>.
+          <span className="font-signature text-gradient inline-block leading-[0.95]" style={{ fontSize: "1.15em" }}>
+            every day
+          </span>
+          .
         </>
       }
     >
