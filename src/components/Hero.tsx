@@ -83,20 +83,20 @@ export default function Hero() {
             className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* Inner orbit — main techs close to the photo */}
+          {/* Inner orbit — supporting languages, pushed out so they never overlap the photo */}
           <TechOrbit
-            radiusRatio={0.34}
-            duration={32}
+            radiusRatio={0.42}
+            duration={34}
             logos={innerLogos}
-            chipSize={48}
+            chipSize={42}
           />
-          {/* Outer orbit — supporting techs, reverse direction */}
+          {/* Outer orbit — main tools, brought closer and densified */}
           <TechOrbit
-            radiusRatio={0.5}
-            duration={52}
+            radiusRatio={0.52}
+            duration={58}
             reverse
             logos={outerLogos}
-            chipSize={42}
+            chipSize={46}
           />
 
           {/* Profile photo — bigger, kept crisp, no color filters */}
