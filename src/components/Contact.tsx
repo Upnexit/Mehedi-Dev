@@ -35,7 +35,7 @@ export default function Contact() {
           </p>
 
           <motion.a
-            href="mailto:hello@mehedi.dev"
+            href="mailto:mehedihasanwork25@gmail.com"
             whileHover={{ scale: 1.05 }}
             className="mt-10 inline-flex items-center gap-3 px-7 sm:px-8 py-4 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-glow text-sm sm:text-base"
           >
@@ -45,8 +45,8 @@ export default function Contact() {
 
           <div className="mt-12 flex items-center justify-center gap-3 sm:gap-4">
             {[
-              { icon: GithubIcon, href: "https://github.com", label: "GitHub" },
-              { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
+              { icon: GithubIcon, href: "https://github.com/Upnexit", label: "GitHub" },
+              { icon: FacebookIcon, href: "https://www.facebook.com/mehedi.hasan.79867", label: "Facebook" },
               { icon: TwitterIcon, href: "https://twitter.com", label: "Twitter / X" },
             ].map(({ icon: Icon, href, label }) => (
               <a
