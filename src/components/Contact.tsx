@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "@/components/icons/Brand";
+import { GithubIcon, FacebookIcon, TwitterIcon } from "@/components/icons/Brand";
 
 export default function Contact() {
   return (
