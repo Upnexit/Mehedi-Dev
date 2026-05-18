@@ -206,9 +206,9 @@ export default function Hero() {
             className="mt-9 flex items-center justify-center lg:justify-start gap-3 sm:gap-4"
           >
             {[
-              { icon: GithubIcon, href: "https://github.com" },
-              { icon: LinkedinIcon, href: "https://linkedin.com" },
-              { icon: Mail, href: "#contact" },
+              { icon: GithubIcon, href: "https://github.com/Upnexit" },
+              { icon: FacebookIcon, href: "https://www.facebook.com/mehedi.hasan.79867" },
+              { icon: Mail, href: "mailto:mehedihasanwork25@gmail.com" },
             ].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
