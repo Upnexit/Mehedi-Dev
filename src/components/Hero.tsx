@@ -22,23 +22,25 @@ import {
   ViteLogo,
 } from "@/components/icons/TechLogos";
 
-// Inner ring — supporting languages orbit close to the photo
+// Inner ring — supporting languages orbit close to the photo (kept light)
 const innerLogos = [
   { Icon: JavaScriptLogo, label: "JavaScript" },
   { Icon: HTML5Logo, label: "HTML5" },
-  { Icon: PythonLogo, label: "Python" },
   { Icon: CSS3Logo, label: "CSS3" },
   { Icon: TypeScriptLogo, label: "TypeScript" },
   { Icon: GraphQLLogo, label: "GraphQL" },
-  { Icon: DockerLogo, label: "Docker" },
-  { Icon: ViteLogo, label: "Vite" },
 ];
 
-// Outer ring — main tools/platforms, in reverse direction
+// Outer ring — main tools/platforms, densely packed in reverse direction.
+// Extra logos are interleaved between the headline marks (GitHub / Figma /
+// VS Code / Next.js) so the orbit reads as a rich, professional toolbelt.
 const outerLogos = [
   { Icon: GitHubLogo, label: "GitHub" },
+  { Icon: PythonLogo, label: "Python" },
   { Icon: NextLogo, label: "Next.js" },
+  { Icon: DockerLogo, label: "Docker" },
   { Icon: FigmaLogo, label: "Figma" },
+  { Icon: ViteLogo, label: "Vite" },
   { Icon: ReactLogo, label: "React" },
   { Icon: NodeLogo, label: "Node.js" },
   { Icon: TailwindLogo, label: "Tailwind CSS" },
@@ -81,20 +83,20 @@ export default function Hero() {
             className="absolute inset-[-6%] rounded-full border border-dashed border-primary/15"
           />
 
-          {/* Inner orbit — main techs close to the photo */}
+          {/* Inner orbit — supporting languages, pushed out so they never overlap the photo */}
           <TechOrbit
-            radiusRatio={0.34}
-            duration={32}
+            radiusRatio={0.42}
+            duration={34}
             logos={innerLogos}
-            chipSize={48}
+            chipSize={42}
           />
-          {/* Outer orbit — supporting techs, reverse direction */}
+          {/* Outer orbit — main tools, brought closer and densified */}
           <TechOrbit
-            radiusRatio={0.5}
-            duration={52}
+            radiusRatio={0.52}
+            duration={58}
             reverse
             logos={outerLogos}
-            chipSize={42}
+            chipSize={46}
           />
 
           {/* Profile photo — bigger, kept crisp, no color filters */}
