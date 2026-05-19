@@ -85,10 +85,10 @@ export default function Hero() {
 
           {/* Inner orbit — supporting languages, pushed out so they never overlap the photo */}
           <TechOrbit
-            radiusRatio={0.42}
+            radiusRatio={0.37}
             duration={34}
             logos={innerLogos}
-            chipSize={42}
+            chipSize={40}
           />
           {/* Outer orbit — main tools, brought closer and densified */}
           <TechOrbit
