@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const links = [
   { to: "/",         label: "Home"     },
@@ -54,21 +55,25 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link
-          to="/contact"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium glass hover:shadow-glow transition-all"
-        >
-          <span className="size-1.5 rounded-full bg-primary animate-pulse" />
-          Available for work
-        </Link>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageToggle />
 
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          <Link
+            to="/contact"
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium glass hover:shadow-glow transition-all"
+          >
+            <span className="size-1.5 rounded-full bg-primary animate-pulse" />
+            Available for work
+          </Link>
+
+          <button
+            className="md:hidden text-foreground"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
