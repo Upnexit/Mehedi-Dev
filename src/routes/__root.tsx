@@ -8,6 +8,7 @@ import {
 
 import appCss from "../styles.css?url";
 import { ErrorFallback, NotFoundFallback } from "@/components/ErrorFallback";
+import { LanguageProvider } from "@/lib/language";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -57,7 +58,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <LanguageProvider>
+        <Outlet />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

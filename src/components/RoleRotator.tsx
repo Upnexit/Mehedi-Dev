@@ -21,27 +21,33 @@ export default function RoleRotator() {
 
   return (
     <div
-      className="mt-5 inline-flex items-center gap-2 font-mono text-xs sm:text-sm md:text-base text-muted-foreground"
+      className="mt-5 w-full max-w-xl font-mono text-xs sm:text-sm md:text-base text-muted-foreground"
       aria-live="polite"
     >
-      <span className="size-1.5 rounded-full bg-primary animate-pulse shrink-0" />
-      <span className="text-primary/80">currently:</span>
+      {/* Static label — never moves */}
+      <div className="flex items-center gap-2">
+        <span className="size-1.5 rounded-full bg-primary animate-pulse shrink-0" />
+        <span className="text-primary/80">currently:</span>
+      </div>
 
-      <span className="relative inline-block min-h-[1.4em] overflow-hidden">
-        <AnimatePresence mode="wait">
-          <motion.span
+      {/* Rotating text — confined to its own row, fixed height, no layout shift */}
+      <div className="relative mt-1 h-[1.6em] sm:h-[1.5em] overflow-hidden">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
             key={r.verb + r.what}
-            initial={{ y: 18, opacity: 0 }}
+            initial={{ y: "100%", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -18, opacity: 0 }}
+            exit={{ y: "-100%", opacity: 0 }}
             transition={{ duration: 0.45, ease: "easeOut" }}
-            className="inline-block whitespace-nowrap"
+            className="absolute inset-0 flex items-center"
           >
-            <span className="text-foreground font-semibold">{r.verb}</span>{" "}
-            <span className="text-gradient font-semibold">{r.what}</span>
-          </motion.span>
+            <span className="truncate">
+              <span className="text-foreground font-semibold">{r.verb}</span>{" "}
+              <span className="text-gradient font-semibold">{r.what}</span>
+            </span>
+          </motion.div>
         </AnimatePresence>
-      </span>
+      </div>
     </div>
   );
 }

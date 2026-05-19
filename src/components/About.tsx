@@ -14,45 +14,60 @@ import {
   Mail,
 } from "lucide-react";
 import SectionShell from "./SectionShell";
-
-const stats = [
-  { value: "৩+", label: "বছরের অভিজ্ঞতা", Icon: Code2, tint: "from-cyan-400/30 to-sky-500/20" },
-  { value: "৩০+", label: "সম্পন্ন প্রজেক্ট", Icon: Rocket, tint: "from-violet-500/30 to-fuchsia-500/20" },
-  { value: "২০+", label: "সন্তুষ্ট ক্লায়েন্ট", Icon: Users, tint: "from-emerald-400/30 to-cyan-500/20" },
-  { value: "১০০%", label: "যত্নে তৈরি কাজ", Icon: Sparkles, tint: "from-amber-400/30 to-pink-500/20" },
-];
-
-const personal = [
-  { Icon: MapPin, label: "ঠিকানা", value: "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ" },
-  { Icon: Briefcase, label: "পেশা", value: "ফুল-স্ট্যাক ওয়েব ডেভেলপার" },
-  { Icon: GraduationCap, label: "বর্তমান পড়াশোনা", value: "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং, রাজশাহী" },
-  { Icon: Languages, label: "ভাষা", value: "বাংলা · ইংরেজি" },
-  { Icon: Coffee, label: "ভালো লাগে", value: "কফি, কোড আর নতুন আইডিয়া" },
-  { Icon: Heart, label: "কাজের ধরন", value: "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও" },
-];
-
-const education = [
-  {
-    year: "চলমান",
-    title: "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং",
-    place: "রাজশাহী",
-    text: "বর্তমানে ইলেকট্রিক্যাল ইঞ্জিনিয়ারিংয়ে ডিপ্লোমা করছি — পাশাপাশি ওয়েব ডেভেলপমেন্টে নিজের দক্ষতা প্রতিদিন আরও শাণিত করছি।",
-  },
-  {
-    year: "এসএসসি",
-    title: "মাধ্যমিক — বিজ্ঞান বিভাগ",
-    place: "আলী হেলাল ইসলামী একাডেমি অ্যান্ড কলেজ",
-    text: "বিজ্ঞান বিভাগ থেকে এসএসসি সম্পন্ন করেছি — এখান থেকেই গণিত, যুক্তি ও প্রযুক্তির প্রতি গভীর ভালোবাসার শুরু।",
-  },
-  {
-    year: "প্রাথমিক",
-    title: "প্রাথমিক শিক্ষা (হাতেখড়ি)",
-    place: "সোনাডাঙ্গা গোপালপুর সরকারি প্রাথমিক বিদ্যালয়",
-    text: "নিজের গ্রামের স্কুলেই পড়াশোনার হাতেখড়ি — এখান থেকেই শেখা ও জানার যাত্রা শুরু।",
-  },
-];
+import { useLanguage } from "@/lib/language";
 
 export default function About() {
+  const { lang, t } = useLanguage();
+  const bn = lang === "bn";
+  const bnFont = bn ? "font-bangla" : "";
+  const bnDisplay = bn ? "font-bangla-display" : "";
+
+  const stats = [
+    { value: t("3+", "৩+"),    label: t("Years of experience", "বছরের অভিজ্ঞতা"), Icon: Code2,     tint: "from-cyan-400/30 to-sky-500/20" },
+    { value: t("30+", "৩০+"),  label: t("Projects shipped",    "সম্পন্ন প্রজেক্ট"), Icon: Rocket,    tint: "from-violet-500/30 to-fuchsia-500/20" },
+    { value: t("20+", "২০+"),  label: t("Happy clients",       "সন্তুষ্ট ক্লায়েন্ট"), Icon: Users,     tint: "from-emerald-400/30 to-cyan-500/20" },
+    { value: t("100%", "১০০%"),label: t("Crafted with care",   "যত্নে তৈরি কাজ"), Icon: Sparkles,  tint: "from-amber-400/30 to-pink-500/20" },
+  ];
+
+  const personal = [
+    { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ") },
+    { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার") },
+    { Icon: GraduationCap,  label: t("Currently studying","বর্তমান পড়াশোনা"),value: t("Diploma in Electrical Engineering, Rajshahi",     "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং, রাজশাহী") },
+    { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি") },
+    { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া") },
+    { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও") },
+  ];
+
+  const education = [
+    {
+      year:  t("Ongoing", "চলমান"),
+      title: t("Diploma in Electrical Engineering", "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং"),
+      place: t("Rajshahi", "রাজশাহী"),
+      text:  t(
+        "Currently pursuing a Diploma in Electrical Engineering — while sharpening my web development craft every single day.",
+        "বর্তমানে ইলেকট্রিক্যাল ইঞ্জিনিয়ারিংয়ে ডিপ্লোমা করছি — পাশাপাশি ওয়েব ডেভেলপমেন্টে নিজের দক্ষতা প্রতিদিন আরও শাণিত করছি।",
+      ),
+    },
+    {
+      year:  t("SSC", "এসএসসি"),
+      title: t("Secondary School — Science", "মাধ্যমিক — বিজ্ঞান বিভাগ"),
+      place: t("Ali Helal Islami Academy & College", "আলী হেলাল ইসলামী একাডেমি অ্যান্ড কলেজ"),
+      text:  t(
+        "Completed SSC in the Science group — this is where my deep love for math, logic and technology began.",
+        "বিজ্ঞান বিভাগ থেকে এসএসসি সম্পন্ন করেছি — এখান থেকেই গণিত, যুক্তি ও প্রযুক্তির প্রতি গভীর ভালোবাসার শুরু।",
+      ),
+    },
+    {
+      year:  t("Primary", "প্রাথমিক"),
+      title: t("Primary education (the very first steps)", "প্রাথমিক শিক্ষা (হাতেখড়ি)"),
+      place: t("Sonadanga Gopalpur Government Primary School", "সোনাডাঙ্গা গোপালপুর সরকারি প্রাথমিক বিদ্যালয়"),
+      text:  t(
+        "My learning journey began right at my village school — that's where curiosity took its first shape.",
+        "নিজের গ্রামের স্কুলেই পড়াশোনার হাতেখড়ি — এখান থেকেই শেখা ও জানার যাত্রা শুরু।",
+      ),
+    },
+  ];
+
   return (
     <SectionShell
       id="about"
@@ -73,28 +88,55 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
-          className="space-y-5 text-base md:text-lg text-muted-foreground leading-[1.9] font-bangla"
+          className={`space-y-5 text-base md:text-lg text-muted-foreground leading-[1.9] ${bnFont}`}
         >
-          <p>
-            আমি <span className="text-foreground font-semibold">মেহেদী হাসান</span> —
-            বাংলাদেশ থেকে একজন ফুল-স্ট্যাক ওয়েব ডেভেলপার। স্টার্টআপ ও ফাউন্ডারদের
-            একদম প্রাথমিক আইডিয়া থেকে শুরু করে প্রোডাকশন-রেডি, পরিপূর্ণ একটি
-            প্রোডাক্ট পর্যন্ত নিয়ে যেতে সাহায্য করি।
-          </p>
-          <p>
-            আমার পছন্দের টুলগুলোর মধ্যে আছে{" "}
-            <span className="text-primary font-medium">React</span>,{" "}
-            <span className="text-primary font-medium">Next.js</span>,{" "}
-            <span className="text-primary font-medium">TypeScript</span> ও{" "}
-            <span className="text-primary font-medium">Node.js</span> — সাথে
-            আধুনিক ক্লাউড স্ট্যাক। পারফরম্যান্স, অ্যাক্সেসিবিলিটি, টাইপ-সেফটি আর
-            পিক্সেল-পারফেক্ট ডিটেইল — এগুলোর সাথে কখনো কম্প্রোমাইজ করি না।
-          </p>
-          <p>
-            প্রতিটি প্রজেক্টকে আমি নিজের প্রজেক্টের মতো দেখি — ব্রিফকে প্রশ্ন করি,
-            এজ-কেস নিয়ে ভাবি এবং এমন কাজ ডেলিভার করি যেটা ইউজার আর ক্লায়েন্ট
-            দুজনকেই গর্বিত করে।
-          </p>
+          {bn ? (
+            <>
+              <p>
+                আমি <span className="text-foreground font-semibold">মেহেদী হাসান</span> —
+                বাংলাদেশ থেকে একজন ফুল-স্ট্যাক ওয়েব ডেভেলপার। স্টার্টআপ ও ফাউন্ডারদের
+                একদম প্রাথমিক আইডিয়া থেকে শুরু করে প্রোডাকশন-রেডি, পরিপূর্ণ একটি
+                প্রোডাক্ট পর্যন্ত নিয়ে যেতে সাহায্য করি।
+              </p>
+              <p>
+                আমার পছন্দের টুলগুলোর মধ্যে আছে{" "}
+                <span className="text-primary font-medium">React</span>,{" "}
+                <span className="text-primary font-medium">Next.js</span>,{" "}
+                <span className="text-primary font-medium">TypeScript</span> ও{" "}
+                <span className="text-primary font-medium">Node.js</span> — সাথে
+                আধুনিক ক্লাউড স্ট্যাক। পারফরম্যান্স, অ্যাক্সেসিবিলিটি, টাইপ-সেফটি আর
+                পিক্সেল-পারফেক্ট ডিটেইল — এগুলোর সাথে কখনো কম্প্রোমাইজ করি না।
+              </p>
+              <p>
+                প্রতিটি প্রজেক্টকে আমি নিজের প্রজেক্টের মতো দেখি — ব্রিফকে প্রশ্ন করি,
+                এজ-কেস নিয়ে ভাবি এবং এমন কাজ ডেলিভার করি যেটা ইউজার আর ক্লায়েন্ট
+                দুজনকেই গর্বিত করে।
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                I'm <span className="text-foreground font-semibold">Mehedi Hasan</span> —
+                a full-stack web developer from Bangladesh. I help startups and
+                founders take a raw idea all the way to a production-ready,
+                polished product.
+              </p>
+              <p>
+                My go-to stack includes{" "}
+                <span className="text-primary font-medium">React</span>,{" "}
+                <span className="text-primary font-medium">Next.js</span>,{" "}
+                <span className="text-primary font-medium">TypeScript</span> and{" "}
+                <span className="text-primary font-medium">Node.js</span> — paired
+                with a modern cloud stack. Performance, accessibility, type-safety
+                and pixel-perfect detail are non-negotiables for me.
+              </p>
+              <p>
+                I treat every project as if it were my own — I question the brief,
+                think through edge cases, and ship work that makes both users and
+                clients proud.
+              </p>
+            </>
+          )}
         </motion.div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -114,10 +156,10 @@ export default function About() {
               />
               <div className="relative">
                 <s.Icon className="text-primary mb-3" size={20} />
-                <div className="text-3xl md:text-4xl font-bold text-gradient font-bangla-display">
+                <div className={`text-3xl md:text-4xl font-bold text-gradient ${bnDisplay}`}>
                   {s.value}
                 </div>
-                <div className="mt-1 text-xs md:text-sm text-muted-foreground font-bangla">
+                <div className={`mt-1 text-xs md:text-sm text-muted-foreground ${bnFont}`}>
                   {s.label}
                 </div>
               </div>
@@ -126,7 +168,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* জানুন আমার সম্পর্কে */}
+      {/* Personal */}
       <div className="mt-24 md:mt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -135,16 +177,19 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-10 md:mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-4">
+          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-4 ${bnFont}`}>
             <span className="size-1.5 rounded-full bg-gradient-primary" />
-            ০২ / পরিচিতি
+            {t("02 / PERSONAL", "০২ / পরিচিতি")}
           </div>
           <h3 className="leading-[0.9] flex flex-wrap items-baseline gap-x-4" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
             <span className="font-bold tracking-tight text-foreground">My</span>
             <span className="font-signature text-gradient">About</span>
           </h3>
-          <p className="mt-3 text-muted-foreground font-bangla text-base md:text-lg max-w-2xl leading-[1.9]">
-            কাজের বাইরে আমি কে, কোথা থেকে এসেছি — এক নজরে কিছু ব্যক্তিগত তথ্য।
+          <p className={`mt-3 text-muted-foreground text-base md:text-lg max-w-2xl leading-[1.9] ${bnFont}`}>
+            {t(
+              "A glimpse of who I am beyond the work — a few personal notes about my background.",
+              "কাজের বাইরে আমি কে, কোথা থেকে এসেছি — এক নজরে কিছু ব্যক্তিগত তথ্য।",
+            )}
           </p>
         </motion.div>
 
@@ -163,10 +208,10 @@ export default function About() {
                 <p.Icon size={18} />
               </div>
               <div className="min-w-0">
-                <div className="text-xs md:text-sm text-muted-foreground font-bangla mb-1">
+                <div className={`text-xs md:text-sm text-muted-foreground mb-1 ${bnFont}`}>
                   {p.label}
                 </div>
-                <div className="text-base md:text-lg font-semibold font-bangla leading-snug">
+                <div className={`text-base md:text-lg font-semibold leading-snug ${bnFont}`}>
                   {p.value}
                 </div>
               </div>
@@ -175,7 +220,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* শিক্ষা ও পড়াশোনা */}
+      {/* Education */}
       <div className="mt-24 md:mt-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -184,9 +229,9 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-10 md:mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-4">
+          <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass font-mono text-[10px] sm:text-xs text-primary tracking-widest mb-4 ${bnFont}`}>
             <span className="size-1.5 rounded-full bg-gradient-primary" />
-            ০৩ / পড়াশোনা
+            {t("03 / EDUCATION", "০৩ / পড়াশোনা")}
           </div>
           <h3 className="leading-[0.9] flex flex-wrap items-baseline gap-x-4" style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}>
             <span className="font-bold tracking-tight text-foreground">My</span>
@@ -207,14 +252,14 @@ export default function About() {
               <span className="absolute -left-[13px] top-1.5 size-6 rounded-full bg-gradient-primary text-primary-foreground flex items-center justify-center shadow-glow">
                 <BookOpen size={12} />
               </span>
-              <div className="font-mono text-[11px] md:text-xs text-primary mb-1 tracking-widest">
+              <div className={`font-mono text-[11px] md:text-xs text-primary mb-1 tracking-widest ${bnFont}`}>
                 {e.year}
               </div>
-              <h4 className="text-lg md:text-xl font-semibold font-bangla">
+              <h4 className={`text-lg md:text-xl font-semibold ${bnFont}`}>
                 {e.title}{" "}
                 <span className="text-muted-foreground font-normal">· {e.place}</span>
               </h4>
-              <p className="mt-2 text-sm md:text-base text-muted-foreground font-bangla leading-[1.9]">
+              <p className={`mt-2 text-sm md:text-base text-muted-foreground leading-[1.9] ${bnFont}`}>
                 {e.text}
               </p>
             </motion.li>
@@ -222,7 +267,7 @@ export default function About() {
         </ol>
       </div>
 
-      {/* আমার দর্শন / কাজের নীতি */}
+      {/* Philosophy */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -232,28 +277,33 @@ export default function About() {
       >
         <div className="absolute -top-24 -right-24 size-72 rounded-full bg-gradient-primary opacity-20 blur-3xl" />
         <div className="relative">
-          <h3 className="text-2xl md:text-4xl font-bold font-bangla-display leading-tight">
-            “ছোট ছোট <span className="text-gradient">ডিটেইল</span> থেকেই জন্ম নেয় বড় অভিজ্ঞতা।”
+          <h3 className={`text-2xl md:text-4xl font-bold leading-tight ${bnDisplay}`}>
+            {bn ? (
+              <>“ছোট ছোট <span className="text-gradient">ডিটেইল</span> থেকেই জন্ম নেয় বড় অভিজ্ঞতা।”</>
+            ) : (
+              <>“Great experiences are born from the <span className="text-gradient">smallest details</span>.”</>
+            )}
           </h3>
-          <p className="mt-4 text-muted-foreground font-bangla text-base md:text-lg leading-[1.9] max-w-3xl">
-            আমি বিশ্বাস করি, একটি ভালো প্রোডাক্ট শুধু সুন্দর দেখতেই হয় না — সেটা
-            দ্রুত, নির্ভরযোগ্য এবং সবার জন্য ব্যবহারযোগ্য হওয়া দরকার। এই তিনটি
-            ভিত্তির উপরই আমি আমার প্রতিটি প্রজেক্ট দাঁড় করাই।
+          <p className={`mt-4 text-muted-foreground text-base md:text-lg leading-[1.9] max-w-3xl ${bnFont}`}>
+            {t(
+              "I believe a great product isn't just one that looks good — it has to be fast, reliable and usable by everyone. Every project I build stands on those three foundations.",
+              "আমি বিশ্বাস করি, একটি ভালো প্রোডাক্ট শুধু সুন্দর দেখতেই হয় না — সেটা দ্রুত, নির্ভরযোগ্য এবং সবার জন্য ব্যবহারযোগ্য হওয়া দরকার। এই তিনটি ভিত্তির উপরই আমি আমার প্রতিটি প্রজেক্ট দাঁড় করাই।",
+            )}
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-glow hover:scale-105 transition-transform font-bangla"
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-primary text-primary-foreground font-medium shadow-glow hover:scale-105 transition-transform ${bnFont}`}
             >
               <Mail size={16} />
-              যোগাযোগ করুন
+              {t("Get in touch", "যোগাযোগ করুন")}
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:border-primary transition-all font-bangla"
+              className={`inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:border-primary transition-all ${bnFont}`}
             >
-              আমার কাজ দেখুন →
+              {t("See my work →", "আমার কাজ দেখুন →")}
             </a>
           </div>
         </div>
