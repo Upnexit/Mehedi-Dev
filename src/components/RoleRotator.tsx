@@ -24,29 +24,29 @@ export default function RoleRotator() {
       className="mt-5 w-full max-w-xl font-mono text-xs sm:text-sm md:text-base text-muted-foreground"
       aria-live="polite"
     >
-      {/* Static label — never moves */}
-      <div className="flex items-center gap-2">
+      {/* Single row — label and rotating text aligned inline */}
+      <div className="flex items-center gap-2 min-w-0">
         <span className="size-1.5 rounded-full bg-primary animate-pulse shrink-0" />
-        <span className="text-primary/80">currently:</span>
-      </div>
+        <span className="text-primary/80 shrink-0">currently:</span>
 
-      {/* Rotating text — confined to its own row, fixed height, no layout shift */}
-      <div className="relative mt-1 h-[1.6em] sm:h-[1.5em] overflow-hidden">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={r.verb + r.what}
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "-100%", opacity: 0 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="absolute inset-0 flex items-center"
-          >
-            <span className="truncate">
-              <span className="text-foreground font-semibold">{r.verb}</span>{" "}
-              <span className="text-gradient font-semibold">{r.what}</span>
-            </span>
-          </motion.div>
-        </AnimatePresence>
+        {/* Rotating text — fixed-height container prevents layout shift */}
+        <div className="relative h-[1.6em] sm:h-[1.5em] flex-1 min-w-0 overflow-hidden">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={r.verb + r.what}
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              className="absolute inset-0 flex items-center"
+            >
+              <span className="truncate">
+                <span className="text-foreground font-semibold">{r.verb}</span>{" "}
+                <span className="text-gradient font-semibold">{r.what}</span>
+              </span>
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
