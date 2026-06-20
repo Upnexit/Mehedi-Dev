@@ -7,6 +7,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Company from "@/components/Company";
 import Contact from "@/components/Contact";
+import profileWebp from "@/assets/mehedi-800.webp";
 
 const Scene3D = lazy(() => import("@/components/Scene3D"));
 
@@ -26,6 +27,15 @@ export const Route = createFileRoute("/")({
           "Portfolio of Mehedi Hasan, a full-stack web developer building fast, beautiful and scalable web experiences.",
       },
       { property: "og:type", content: "website" },
+    ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: profileWebp,
+        type: "image/webp",
+        fetchpriority: "high",
+      } as unknown as { rel: string; href: string },
     ],
   }),
   component: Index,
