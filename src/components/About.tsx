@@ -32,7 +32,7 @@ export default function About() {
   const personal = [
     { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ") },
     { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার") },
-    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (2015–2019)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (২০১৫–২০১৯)") },
+    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (Running, 2025 – Present)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান, ২০২৫ – বর্তমান)") },
     { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি") },
     { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া") },
     { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও") },
@@ -40,30 +40,30 @@ export default function About() {
 
   const education = [
     {
-      year:  t("2015 – 2019", "২০১৫ – ২০১৯"),
-      title: t("Diploma in Electrical Engineering", "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং"),
-      place: t("Polytechnic Institute, Rajshahi", "পলিটেকনিক ইনস্টিটিউট, রাজশাহী"),
+      year:  t("2025 – Present", "২০২৫ – বর্তমান"),
+      title: t("Diploma in Electrical Engineering (Running)", "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান)"),
+      place: t("Bangladesh Polytechnic Institute", "বাংলাদেশ পলিটেকনিক ইনস্টিটিউট"),
       text:  t(
-        "Completed a 4-year Diploma in Electrical Engineering. Alongside the coursework I kept building on the web — turning curiosity into a real craft.",
-        "৪ বছরের ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং সম্পন্ন করেছি। পড়াশোনার পাশাপাশি ওয়েব ডেভেলপমেন্ট চর্চা চালিয়ে গেছি — কৌতূহলকে বানিয়েছি আসল দক্ষতায়।",
+        "Started the Diploma in Electrical Engineering in November 2025 at Bangladesh Polytechnic Institute. Currently studying — and sharpening my web development craft every single day alongside the coursework.",
+        "নভেম্বর ২০২৫-এ বাংলাদেশ পলিটেকনিক ইনস্টিটিউটে ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং শুরু করেছি। বর্তমানে এটি চলমান — পড়াশোনার পাশাপাশি প্রতিদিন ওয়েব ডেভেলপমেন্টে নিজেকে আরও শাণিত করছি।",
       ),
     },
     {
-      year:  t("2015", "২০১৫"),
+      year:  t("Oct 2025", "অক্টোবর ২০২৫"),
       title: t("SSC — Science", "এসএসসি — বিজ্ঞান বিভাগ"),
       place: t("Al Helal Islami Academy & College", "আল হেলাল ইসলামী একাডেমি অ্যান্ড কলেজ"),
       text:  t(
-        "Completed SSC in the Science group in 2015 — this is where my deep love for math, logic and technology began.",
-        "২০১৫ সালে বিজ্ঞান বিভাগ থেকে এসএসসি সম্পন্ন করেছি — এখান থেকেই গণিত, যুক্তি ও প্রযুক্তির প্রতি গভীর ভালোবাসার শুরু।",
+        "Completed SSC in the Science group in October 2025 — this is where my deep love for math, logic and technology truly took shape.",
+        "অক্টোবর ২০২৫-এ বিজ্ঞান বিভাগ থেকে এসএসসি সম্পন্ন করেছি — এখান থেকেই গণিত, যুক্তি ও প্রযুক্তির প্রতি গভীর ভালোবাসার শুরু।",
       ),
     },
     {
-      year:  t("Primary", "প্রাথমিক"),
-      title: t("Primary education (the very first steps)", "প্রাথমিক শিক্ষা (হাতেখড়ি)"),
+      year:  t("2019", "২০১৯"),
+      title: t("PSC — Primary School Certificate", "পিএসসি — প্রাথমিক শিক্ষা সমাপনী"),
       place: t("Sonadanga Gopalpur Government Primary School", "সোনাডাঙ্গা গোপালপুর সরকারি প্রাথমিক বিদ্যালয়"),
       text:  t(
-        "My learning journey began right at my village school — that's where curiosity took its first shape.",
-        "নিজের গ্রামের স্কুলেই পড়াশোনার হাতেখড়ি — এখান থেকেই শেখা ও জানার যাত্রা শুরু।",
+        "Completed PSC in 2019 from my village school — that's where curiosity and the joy of learning first took shape.",
+        "২০১৯ সালে নিজের গ্রামের স্কুল থেকে পিএসসি সম্পন্ন করেছি — এখান থেকেই কৌতূহল আর শেখার আনন্দের প্রথম যাত্রা শুরু।",
       ),
     },
   ];
