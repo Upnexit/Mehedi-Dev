@@ -3,7 +3,8 @@ import { ArrowDown, Mail } from "lucide-react";
 import { GithubIcon, FacebookIcon } from "@/components/icons/Brand";
 import TechOrbit from "@/components/TechOrbit";
 import RoleRotator from "@/components/RoleRotator";
-import profile from "@/assets/mehedi.jpg";
+import profileWebp from "@/assets/mehedi-800.webp";
+import profileJpg from "@/assets/mehedi-800.jpg";
 import {
   VSCodeLogo,
   FigmaLogo,
@@ -107,15 +108,21 @@ export default function Hero() {
             className="relative size-56 sm:size-64 md:size-72 lg:size-80 rounded-full p-[3px] bg-gradient-primary shadow-elegant z-10"
           >
             <div className="size-full rounded-full overflow-hidden bg-card ring-4 ring-background">
-              <img
-                src={profile}
-                alt="Mehedi Hasan — Full Stack Developer"
-                className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-                style={{ imageRendering: "auto" }}
-                draggable={false}
-              />
+              <picture>
+                <source srcSet={profileWebp} type="image/webp" />
+                <img
+                  src={profileJpg}
+                  alt="Mehedi Hasan — Full Stack Developer"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  // @ts-expect-error - fetchpriority is a valid HTML attribute
+                  fetchpriority="high"
+                  draggable={false}
+                />
+              </picture>
             </div>
           </motion.div>
         </motion.div>
