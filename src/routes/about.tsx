@@ -26,32 +26,25 @@ export const Route = createFileRoute("/about")({
 
 const timeline = [
   {
-    year: "2024 — Now",
-    role: "Senior Full-Stack Developer",
-    org: "Freelance & Product Studios",
-    Icon: Briefcase,
-    text: "Leading end-to-end product builds — from architecture to launch — for SaaS startups and agencies.",
-  },
-  {
-    year: "2022 — 2024",
-    role: "Full-Stack Engineer",
-    org: "Remote Product Teams",
-    Icon: Briefcase,
-    text: "Shipped React/Next.js apps with Node, Postgres and AWS. Owned features end-to-end.",
-  },
-  {
-    year: "2021",
-    role: "Frontend Developer",
-    org: "Early-stage Startup",
-    Icon: Briefcase,
-    text: "Built design systems, dashboards and marketing sites with React, TypeScript and Tailwind.",
-  },
-  {
-    year: "2019 — 2023",
-    role: "B.Sc. in Computer Science",
-    org: "University, Bangladesh",
+    year: "2025 — Present",
+    role: "Diploma in Electrical Engineering (Running)",
+    org: "Bangladesh Polytechnic Institute",
     Icon: GraduationCap,
-    text: "Foundations in algorithms, systems, databases and human-computer interaction.",
+    text: "Started the Diploma in Electrical Engineering in November 2025. Currently studying — and sharpening my web development craft every single day alongside the coursework.",
+  },
+  {
+    year: "Oct 2025",
+    role: "SSC — Science Group",
+    org: "Al Helal Islami Academy & College",
+    Icon: GraduationCap,
+    text: "Completed SSC in the Science group in October 2025 — this is where my deep love for math, logic and technology truly took shape.",
+  },
+  {
+    year: "2019",
+    role: "PSC — Primary School Certificate",
+    org: "Sonadanga Gopalpur Government Primary School",
+    Icon: GraduationCap,
+    text: "Completed PSC in 2019 from my village school — the very first steps of a lifelong learning journey.",
   },
 ];
 
