@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import LanguageToggle from "@/components/LanguageToggle";
 import ThemeToggle from "@/components/ThemeToggle";
+import mhLogo from "@/assets/mh-logo.png.asset.json";
 
 const links = [
   { to: "/",         label: "Home"     },
@@ -37,8 +38,21 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-5 sm:px-6 flex items-center justify-between gap-4">
-        <Link to="/" className="font-signature text-gradient text-2xl sm:text-3xl leading-none whitespace-nowrap">
-          Mehedi Hasan
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <span className="inline-flex items-center justify-center size-9 sm:size-10 rounded-xl bg-black ring-1 ring-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.45)] overflow-hidden">
+            <img
+              src={mhLogo.url}
+              alt="Mehedi Hasan logo"
+              width={40}
+              height={40}
+              className="size-full object-contain"
+              loading="eager"
+              decoding="async"
+            />
+          </span>
+          <span className="font-signature text-gradient text-2xl sm:text-3xl leading-none whitespace-nowrap">
+            Mehedi Hasan
+          </span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-7 text-sm">

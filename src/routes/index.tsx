@@ -8,25 +8,28 @@ import Projects from "@/components/Projects";
 import Company from "@/components/Company";
 import Contact from "@/components/Contact";
 import profileWebp from "@/assets/mehedi-800.webp";
+import mhLogo from "@/assets/mh-logo.png.asset.json";
 
 const Scene3D = lazy(() => import("@/components/Scene3D"));
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mehedi Hasan — Full Stack Developer" },
+      { title: "Mehedi Hasan — Full Stack Developer & Founder of Upnex IT" },
       {
         name: "description",
         content:
-          "Portfolio of Mehedi Hasan, a full-stack web developer building fast, beautiful and scalable web experiences.",
+          "Portfolio of Mehedi Hasan, a full-stack web developer and founder of Upnex IT, building fast, beautiful and scalable web experiences.",
       },
-      { property: "og:title", content: "Mehedi Hasan — Full Stack Developer" },
+      { property: "og:title", content: "Mehedi Hasan — Full Stack Developer & Founder of Upnex IT" },
       {
         property: "og:description",
         content:
-          "Portfolio of Mehedi Hasan, a full-stack web developer building fast, beautiful and scalable web experiences.",
+          "Portfolio of Mehedi Hasan, a full-stack web developer and founder of Upnex IT, building fast, beautiful and scalable web experiences.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: mhLogo.url },
+      { name: "twitter:image", content: mhLogo.url },
     ],
     links: [
       {
