@@ -9,6 +9,7 @@ import {
 import appCss from "../styles.css?url";
 import { ErrorFallback, NotFoundFallback } from "@/components/ErrorFallback";
 import { LanguageProvider } from "@/lib/language";
+import { ThemeProvider } from "@/lib/theme";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -64,9 +65,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <Outlet />
-      </LanguageProvider>
+      <ThemeProvider>
+        <LanguageProvider>
+          <Outlet />
+        </LanguageProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
