@@ -120,6 +120,12 @@
   --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.78 0.18 200 / 30%), transparent 70%);
   --shadow-glow: 0 0 40px oklch(0.78 0.18 200 / 35%);
   --shadow-elegant: 0 20px 60px -20px oklch(0.65 0.22 295 / 40%);
+
+  --page-gradient:
+    radial-gradient(1200px 800px at 12% -10%, oklch(0.35 0.12 220 / 45%), transparent 60%),
+    radial-gradient(1000px 700px at 100% 10%, oklch(0.32 0.14 295 / 50%), transparent 65%),
+    radial-gradient(1100px 900px at 50% 110%, oklch(0.3 0.1 320 / 40%), transparent 60%),
+    linear-gradient(180deg, oklch(0.14 0.02 260), oklch(0.12 0.025 265));
 }
 
 @layer base {
@@ -133,6 +139,10 @@
 
   body {
     background-color: var(--color-background);
+    background-image: var(--page-gradient);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: var(--color-foreground);
     font-family: var(--font-display);
     font-feature-settings: "ss01", "cv11";
