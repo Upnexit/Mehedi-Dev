@@ -166,9 +166,13 @@
     box-shadow: var(--shadow-elegant);
   }
   .glass {
-    background: oklch(0.2 0.025 260 / 50%);
+    background: oklch(1 0 0 / 55%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(0.7 0.02 260 / 35%);
+  }
+  .dark .glass {
+    background: oklch(0.2 0.025 260 / 50%);
     border: 1px solid oklch(0.4 0.04 260 / 30%);
   }
   .font-mono {
