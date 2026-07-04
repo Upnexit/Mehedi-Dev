@@ -149,17 +149,17 @@ export default function About() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               style={{ transformPerspective: 800 }}
               whileHover={{ y: -6, rotateX: -4, rotateY: 4 }}
-              className="relative glass rounded-3xl p-5 md:p-6 overflow-hidden group"
+              className={`relative glass rounded-3xl p-5 md:p-6 overflow-hidden group ${s.lightBg} light:border-transparent light:shadow-elegant`}
             >
               <div
-                className={`absolute -top-12 -right-12 size-32 rounded-full bg-gradient-to-br ${s.tint} blur-2xl opacity-70 group-hover:opacity-100 transition-opacity`}
+                className={`absolute -top-12 -right-12 size-32 rounded-full bg-gradient-to-br ${s.tint} blur-2xl opacity-70 group-hover:opacity-100 transition-opacity light:hidden`}
               />
               <div className="relative">
-                <s.Icon className="text-primary mb-3" size={20} />
-                <div className={`text-3xl md:text-4xl font-bold text-gradient ${bnDisplay}`}>
+                <s.Icon className="text-primary light:text-white mb-3" size={20} />
+                <div className={`text-3xl md:text-4xl font-bold text-gradient light:bg-none light:text-white ${bnDisplay}`}>
                   {s.value}
                 </div>
-                <div className={`mt-1 text-xs md:text-sm text-muted-foreground ${bnFont}`}>
+                <div className={`mt-1 text-xs md:text-sm text-muted-foreground light:text-white/90 ${bnFont}`}>
                   {s.label}
                 </div>
               </div>
