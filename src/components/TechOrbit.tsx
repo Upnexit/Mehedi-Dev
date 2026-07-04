@@ -85,7 +85,7 @@ export default function TechOrbit({
                     },
                   }}
                   style={{ width: chipSize, height: chipSize }}
-                  className="rounded-2xl flex items-center justify-center pointer-events-auto bg-background/85 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-primary/20"
+                  className="rounded-2xl flex items-center justify-center pointer-events-auto bg-background/85 dark:bg-background/85 [html:not(.dark)_&]:bg-black [html:not(.dark)_&]:text-white backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.08)] ring-1 ring-primary/20"
                   title={label}
                 >
                   <Icon size={Math.round(chipSize * 0.46)} />
