@@ -139,15 +139,19 @@ export default function Hero() {
           </motion.p>
 
           {/* Signature-style name on a single line */}
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="font-signature text-gradient leading-[0.9] whitespace-nowrap"
-            style={{ fontSize: "clamp(3rem, 11vw, 9rem)" }}
+            className="inline-block light:bg-gradient-to-r light:from-cyan-200/70 light:via-violet-200/60 light:to-fuchsia-200/70 light:rounded-[2rem] light:px-6 light:py-2 light:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.35)]"
           >
-            Mehedi Hasan
-          </motion.h1>
+            <h1
+              className="font-signature text-gradient leading-[0.9] whitespace-nowrap"
+              style={{ fontSize: "clamp(3rem, 11vw, 9rem)" }}
+            >
+              Mehedi Hasan
+            </h1>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
@@ -156,14 +160,16 @@ export default function Hero() {
             className="mt-3 h-px w-32 mx-auto lg:mx-0 bg-gradient-primary origin-left"
           />
 
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.65 }}
-            className="mt-6 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight"
+            className="mt-6 inline-block light:bg-gradient-to-r light:from-sky-100/80 light:via-cyan-100/70 light:to-violet-100/80 light:rounded-2xl light:px-5 light:py-2"
           >
-            Full-Stack Web Developer
-          </motion.h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight">
+              Full-Stack Web Developer
+            </h2>
+          </motion.div>
 
           {/* Rotating "what I'm doing" line for a real, alive feel */}
           <motion.div
