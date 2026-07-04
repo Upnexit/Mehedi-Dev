@@ -202,16 +202,16 @@ export default function About() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -4 }}
-              className="glass rounded-2xl p-5 md:p-6 flex items-start gap-4 group"
+              className={`glass rounded-2xl p-5 md:p-6 flex items-start gap-4 group ${p.lightBg} light:border-transparent light:shadow-elegant`}
             >
-              <div className="size-11 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center shadow-glow shrink-0">
+              <div className="size-11 rounded-xl bg-gradient-primary text-primary-foreground light:bg-none light:bg-white/25 light:backdrop-blur flex items-center justify-center shadow-glow shrink-0">
                 <p.Icon size={18} />
               </div>
               <div className="min-w-0">
-                <div className={`text-xs md:text-sm text-muted-foreground mb-1 ${bnFont}`}>
+                <div className={`text-xs md:text-sm text-muted-foreground light:text-white/85 mb-1 ${bnFont}`}>
                   {p.label}
                 </div>
-                <div className={`text-base md:text-lg font-semibold leading-snug ${bnFont}`}>
+                <div className={`text-base md:text-lg font-semibold leading-snug light:text-white ${bnFont}`}>
                   {p.value}
                 </div>
               </div>
