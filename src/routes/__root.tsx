@@ -10,24 +10,27 @@ import appCss from "../styles.css?url";
 import { ErrorFallback, NotFoundFallback } from "@/components/ErrorFallback";
 import { LanguageProvider } from "@/lib/language";
 import { ThemeProvider } from "@/lib/theme";
+import mhLogo from "@/assets/mh-logo.png.asset.json";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "A 3D animated developer portfolio website showcasing projects and skills." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "A 3D animated developer portfolio website showcasing projects and skills." },
+      { title: "Mehedi Hasan — Full Stack Developer & Founder of Upnex IT" },
+      { name: "description", content: "Personal portfolio of Mehedi Hasan — full-stack web developer and founder of Upnex IT, building fast, scalable and beautifully engineered digital products." },
+      { name: "author", content: "Mehedi Hasan" },
+      { property: "og:site_name", content: "Mehedi Hasan" },
+      { property: "og:title", content: "Mehedi Hasan — Full Stack Developer & Founder of Upnex IT" },
+      { property: "og:description", content: "Personal portfolio of Mehedi Hasan — full-stack web developer and founder of Upnex IT, building fast, scalable and beautifully engineered digital products." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "A 3D animated developer portfolio website showcasing projects and skills." },
+      { name: "twitter:title", content: "Mehedi Hasan — Full Stack Developer & Founder of Upnex IT" },
+      { name: "twitter:description", content: "Personal portfolio of Mehedi Hasan — full-stack web developer and founder of Upnex IT." },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: mhLogo.url },
+      { rel: "apple-touch-icon", href: mhLogo.url },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
