@@ -53,7 +53,7 @@ function Index() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground">
+    <main className="relative min-h-screen text-foreground">
       <ClientOnly fallback={null}>
         <Suspense fallback={null}>
           <Scene3D />
