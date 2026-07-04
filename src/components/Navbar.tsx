@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import LanguageToggle from "@/components/LanguageToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { to: "/",         label: "Home"     },
