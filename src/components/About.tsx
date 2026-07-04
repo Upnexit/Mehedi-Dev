@@ -23,19 +23,19 @@ export default function About() {
   const bnDisplay = bn ? "font-bangla-display" : "";
 
   const stats = [
-    { value: t("3+", "৩+"),    label: t("Years of experience", "বছরের অভিজ্ঞতা"), Icon: Code2,     tint: "from-cyan-400/30 to-sky-500/20" },
-    { value: t("30+", "৩০+"),  label: t("Projects shipped",    "সম্পন্ন প্রজেক্ট"), Icon: Rocket,    tint: "from-violet-500/30 to-fuchsia-500/20" },
-    { value: t("20+", "২০+"),  label: t("Happy clients",       "সন্তুষ্ট ক্লায়েন্ট"), Icon: Users,     tint: "from-emerald-400/30 to-cyan-500/20" },
-    { value: t("100%", "১০০%"),label: t("Crafted with care",   "যত্নে তৈরি কাজ"), Icon: Sparkles,  tint: "from-amber-400/30 to-pink-500/20" },
+    { value: t("3+", "৩+"),    label: t("Years of experience", "বছরের অভিজ্ঞতা"), Icon: Code2,     tint: "from-cyan-400/30 to-sky-500/20",         lightBg: "light:bg-gradient-to-br light:from-cyan-500 light:to-sky-600" },
+    { value: t("30+", "৩০+"),  label: t("Projects shipped",    "সম্পন্ন প্রজেক্ট"), Icon: Rocket,    tint: "from-violet-500/30 to-fuchsia-500/20",   lightBg: "light:bg-gradient-to-br light:from-violet-500 light:to-fuchsia-600" },
+    { value: t("20+", "২০+"),  label: t("Happy clients",       "সন্তুষ্ট ক্লায়েন্ট"), Icon: Users,     tint: "from-emerald-400/30 to-cyan-500/20",     lightBg: "light:bg-gradient-to-br light:from-emerald-500 light:to-teal-600" },
+    { value: t("100%", "১০০%"),label: t("Crafted with care",   "যত্নে তৈরি কাজ"), Icon: Sparkles,  tint: "from-amber-400/30 to-pink-500/20",       lightBg: "light:bg-gradient-to-br light:from-amber-500 light:to-pink-600" },
   ];
 
   const personal = [
-    { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ") },
-    { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার") },
-    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (Running, 2025 – Present)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান, ২০২৫ – বর্তমান)") },
-    { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি") },
-    { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া") },
-    { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও") },
+    { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ"),                                                                                        lightBg: "light:bg-gradient-to-br light:from-rose-500 light:to-orange-500" },
+    { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার"),                                                                                                    lightBg: "light:bg-gradient-to-br light:from-indigo-500 light:to-blue-600" },
+    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (Running, 2025 – Present)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান, ২০২৫ – বর্তমান)"),                                    lightBg: "light:bg-gradient-to-br light:from-emerald-500 light:to-green-600" },
+    { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি"),                                                                                                              lightBg: "light:bg-gradient-to-br light:from-fuchsia-500 light:to-purple-600" },
+    { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া"),                                                                                                    lightBg: "light:bg-gradient-to-br light:from-amber-500 light:to-orange-600" },
+    { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও"),                                                                                    lightBg: "light:bg-gradient-to-br light:from-cyan-500 light:to-blue-600" },
   ];
 
   const education = [
