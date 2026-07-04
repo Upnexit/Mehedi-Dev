@@ -10,7 +10,7 @@ import appCss from "../styles.css?url";
 import { ErrorFallback, NotFoundFallback } from "@/components/ErrorFallback";
 import { LanguageProvider } from "@/lib/language";
 import { ThemeProvider } from "@/lib/theme";
-import mhLogo from "@/assets/mh-logo.png.asset.json";
+
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
