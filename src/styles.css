@@ -42,6 +42,43 @@
 :root {
   --radius: 0.75rem;
 
+  /* Light theme — clean, airy, high-contrast with the same cyan/violet accents */
+  --background: oklch(0.985 0.005 240);
+  --foreground: oklch(0.18 0.02 260);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 260);
+
+  --primary: oklch(0.58 0.16 220);
+  --primary-foreground: oklch(0.99 0.005 240);
+
+  --secondary: oklch(0.55 0.22 295);
+  --secondary-foreground: oklch(0.99 0.005 240);
+
+  --muted: oklch(0.94 0.01 250);
+  --muted-foreground: oklch(0.45 0.02 260);
+
+  --accent: oklch(0.58 0.16 220);
+  --accent-foreground: oklch(0.99 0.005 240);
+
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.99 0.005 240);
+
+  --border: oklch(0.85 0.02 260 / 70%);
+  --input: oklch(0.9 0.015 260);
+  --ring: oklch(0.58 0.16 220);
+
+  --glow: oklch(0.58 0.16 220);
+
+  --gradient-primary: linear-gradient(135deg, oklch(0.58 0.16 220), oklch(0.55 0.22 295));
+  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.58 0.16 220 / 22%), transparent 70%);
+  --shadow-glow: 0 0 40px oklch(0.58 0.16 220 / 25%);
+  --shadow-elegant: 0 20px 60px -20px oklch(0.55 0.22 295 / 30%);
+}
+
+.dark {
   /* Dark premium palette — deep space with electric cyan + violet glow */
   --background: oklch(0.14 0.02 260);
   --foreground: oklch(0.97 0.01 240);
@@ -51,10 +88,10 @@
   --popover: oklch(0.18 0.025 260);
   --popover-foreground: oklch(0.97 0.01 240);
 
-  --primary: oklch(0.78 0.18 200); /* electric cyan */
+  --primary: oklch(0.78 0.18 200);
   --primary-foreground: oklch(0.14 0.02 260);
 
-  --secondary: oklch(0.65 0.22 295); /* violet */
+  --secondary: oklch(0.65 0.22 295);
   --secondary-foreground: oklch(0.97 0.01 240);
 
   --muted: oklch(0.22 0.02 260);
@@ -129,9 +166,13 @@
     box-shadow: var(--shadow-elegant);
   }
   .glass {
-    background: oklch(0.2 0.025 260 / 50%);
+    background: oklch(1 0 0 / 55%);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(0.7 0.02 260 / 35%);
+  }
+  .dark .glass {
+    background: oklch(0.2 0.025 260 / 50%);
     border: 1px solid oklch(0.4 0.04 260 / 30%);
   }
   .font-mono {
