@@ -23,19 +23,19 @@ export default function About() {
   const bnDisplay = bn ? "font-bangla-display" : "";
 
   const stats = [
-    { value: t("3+", "৩+"),    label: t("Years of experience", "বছরের অভিজ্ঞতা"), Icon: Code2,     tint: "from-cyan-400/30 to-sky-500/20" },
-    { value: t("30+", "৩০+"),  label: t("Projects shipped",    "সম্পন্ন প্রজেক্ট"), Icon: Rocket,    tint: "from-violet-500/30 to-fuchsia-500/20" },
-    { value: t("20+", "২০+"),  label: t("Happy clients",       "সন্তুষ্ট ক্লায়েন্ট"), Icon: Users,     tint: "from-emerald-400/30 to-cyan-500/20" },
-    { value: t("100%", "১০০%"),label: t("Crafted with care",   "যত্নে তৈরি কাজ"), Icon: Sparkles,  tint: "from-amber-400/30 to-pink-500/20" },
+    { value: t("3+", "৩+"),    label: t("Years of experience", "বছরের অভিজ্ঞতা"), Icon: Code2,     tint: "from-cyan-400/30 to-sky-500/20",         lightBg: "light:bg-gradient-to-br light:from-cyan-500 light:to-sky-600" },
+    { value: t("30+", "৩০+"),  label: t("Projects shipped",    "সম্পন্ন প্রজেক্ট"), Icon: Rocket,    tint: "from-violet-500/30 to-fuchsia-500/20",   lightBg: "light:bg-gradient-to-br light:from-violet-500 light:to-fuchsia-600" },
+    { value: t("20+", "২০+"),  label: t("Happy clients",       "সন্তুষ্ট ক্লায়েন্ট"), Icon: Users,     tint: "from-emerald-400/30 to-cyan-500/20",     lightBg: "light:bg-gradient-to-br light:from-emerald-500 light:to-teal-600" },
+    { value: t("100%", "১০০%"),label: t("Crafted with care",   "যত্নে তৈরি কাজ"), Icon: Sparkles,  tint: "from-amber-400/30 to-pink-500/20",       lightBg: "light:bg-gradient-to-br light:from-amber-500 light:to-pink-600" },
   ];
 
   const personal = [
-    { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ") },
-    { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার") },
-    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (Running, 2025 – Present)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান, ২০২৫ – বর্তমান)") },
-    { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি") },
-    { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া") },
-    { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও") },
+    { Icon: MapPin,         label: t("Location",         "ঠিকানা"),         value: t("Sapahar, Naogaon, Bangladesh",                   "সাপাহার উপজেলা, নওগাঁ জেলা, বাংলাদেশ"),                                                                                        lightBg: "light:bg-gradient-to-br light:from-rose-500 light:to-orange-500" },
+    { Icon: Briefcase,      label: t("Profession",       "পেশা"),           value: t("Full-Stack Web Developer",                        "ফুল-স্ট্যাক ওয়েব ডেভেলপার"),                                                                                                    lightBg: "light:bg-gradient-to-br light:from-indigo-500 light:to-blue-600" },
+    { Icon: GraduationCap,  label: t("Education",        "পড়াশোনা"),       value: t("Diploma in Electrical Engineering (Running, 2025 – Present)",   "ডিপ্লোমা ইন ইলেকট্রিক্যাল ইঞ্জিনিয়ারিং (চলমান, ২০২৫ – বর্তমান)"),                                    lightBg: "light:bg-gradient-to-br light:from-emerald-500 light:to-green-600" },
+    { Icon: Languages,      label: t("Languages",        "ভাষা"),           value: t("Bangla · English",                                "বাংলা · ইংরেজি"),                                                                                                              lightBg: "light:bg-gradient-to-br light:from-fuchsia-500 light:to-purple-600" },
+    { Icon: Coffee,         label: t("I love",           "ভালো লাগে"),      value: t("Coffee, code and fresh ideas",                    "কফি, কোড আর নতুন আইডিয়া"),                                                                                                    lightBg: "light:bg-gradient-to-br light:from-amber-500 light:to-orange-600" },
+    { Icon: Heart,          label: t("Work style",       "কাজের ধরন"),      value: t("Remote · Freelance · Product studio",             "রিমোট · ফ্রিল্যান্স · প্রোডাক্ট স্টুডিও"),                                                                                    lightBg: "light:bg-gradient-to-br light:from-cyan-500 light:to-blue-600" },
   ];
 
   const education = [
@@ -149,17 +149,17 @@ export default function About() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               style={{ transformPerspective: 800 }}
               whileHover={{ y: -6, rotateX: -4, rotateY: 4 }}
-              className="relative glass rounded-3xl p-5 md:p-6 overflow-hidden group"
+              className={`relative glass rounded-3xl p-5 md:p-6 overflow-hidden group ${s.lightBg} light:border-transparent light:shadow-elegant`}
             >
               <div
-                className={`absolute -top-12 -right-12 size-32 rounded-full bg-gradient-to-br ${s.tint} blur-2xl opacity-70 group-hover:opacity-100 transition-opacity`}
+                className={`absolute -top-12 -right-12 size-32 rounded-full bg-gradient-to-br ${s.tint} blur-2xl opacity-70 group-hover:opacity-100 transition-opacity light:hidden`}
               />
               <div className="relative">
-                <s.Icon className="text-primary mb-3" size={20} />
-                <div className={`text-3xl md:text-4xl font-bold text-gradient ${bnDisplay}`}>
+                <s.Icon className="text-primary light:text-white mb-3" size={20} />
+                <div className={`text-3xl md:text-4xl font-bold text-gradient light:bg-none light:text-white ${bnDisplay}`}>
                   {s.value}
                 </div>
-                <div className={`mt-1 text-xs md:text-sm text-muted-foreground ${bnFont}`}>
+                <div className={`mt-1 text-xs md:text-sm text-muted-foreground light:text-white/90 ${bnFont}`}>
                   {s.label}
                 </div>
               </div>
@@ -202,16 +202,16 @@ export default function About() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               whileHover={{ y: -4 }}
-              className="glass rounded-2xl p-5 md:p-6 flex items-start gap-4 group"
+              className={`glass rounded-2xl p-5 md:p-6 flex items-start gap-4 group ${p.lightBg} light:border-transparent light:shadow-elegant`}
             >
-              <div className="size-11 rounded-xl bg-gradient-primary text-primary-foreground flex items-center justify-center shadow-glow shrink-0">
+              <div className="size-11 rounded-xl bg-gradient-primary text-primary-foreground light:bg-none light:bg-white/25 light:backdrop-blur flex items-center justify-center shadow-glow shrink-0">
                 <p.Icon size={18} />
               </div>
               <div className="min-w-0">
-                <div className={`text-xs md:text-sm text-muted-foreground mb-1 ${bnFont}`}>
+                <div className={`text-xs md:text-sm text-muted-foreground light:text-white/85 mb-1 ${bnFont}`}>
                   {p.label}
                 </div>
-                <div className={`text-base md:text-lg font-semibold leading-snug ${bnFont}`}>
+                <div className={`text-base md:text-lg font-semibold leading-snug light:text-white ${bnFont}`}>
                   {p.value}
                 </div>
               </div>
