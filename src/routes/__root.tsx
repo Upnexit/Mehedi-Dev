@@ -10,7 +10,7 @@ import appCss from "../styles.css?url";
 import { ErrorFallback, NotFoundFallback } from "@/components/ErrorFallback";
 import { LanguageProvider } from "@/lib/language";
 import { ThemeProvider } from "@/lib/theme";
-import mhLogo from "@/assets/mh-logo.png.asset.json";
+
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -29,8 +29,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Personal portfolio of Mehedi Hasan — full-stack web developer and founder of Upnex IT." },
     ],
     links: [
-      { rel: "icon", type: "image/png", href: mhLogo.url },
-      { rel: "apple-touch-icon", href: mhLogo.url },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon-512.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
